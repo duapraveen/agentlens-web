@@ -29,3 +29,10 @@ def test_redacts_mrn() -> None:
 def test_plain_text_passes_through() -> None:
     text = "I would like to book an appointment for next Tuesday."
     assert redact(text) == text
+
+
+def test_phi_matches_reports_types() -> None:
+    from agentlens.privacy.redact import phi_matches
+
+    assert phi_matches("SSN 123-45-6789 born 03/14/1985") == ["SSN", "DATE"]
+    assert phi_matches("nothing sensitive here") == []
