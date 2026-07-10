@@ -106,6 +106,36 @@ class DeterministicCheckResult(Base):
     call: Mapped[Call] = relationship(back_populates="check_results")
 
 
+class Cluster(Base):
+    """One recurring failure pattern (derived data — rebuilt on every recluster run)."""
+
+    __tablename__ = "clusters"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    label: Mapped[str] = mapped_column(String(128))
+    description: Mapped[str] = mapped_column(Text, default="")
+    routing_suggestion: Mapped[str] = mapped_column(String(32))
+    dominant_severity: Mapped[str] = mapped_column(String(4))
+    size: Mapped[int] = mapped_column(default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+    members: Mapped[list["ClusterMember"]] = relationship(back_populates="cluster")
+
+
+class ClusterMember(Base):
+    """Membership of one failed eval record in one cluster."""
+
+    __tablename__ = "cluster_members"
+    __table_args__ = (UniqueConstraint("eval_record_id"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    cluster_id: Mapped[int] = mapped_column(ForeignKey("clusters.id"), index=True)
+    eval_record_id: Mapped[int] = mapped_column(ForeignKey("eval_records.id"))
+
+    cluster: Mapped[Cluster] = relationship(back_populates="members")
+    eval_record: Mapped[EvalRecord] = relationship()
+
+
 class LLMCallLog(Base):
     """One row per gateway LLM call: cost accounting and failure recording."""
 
