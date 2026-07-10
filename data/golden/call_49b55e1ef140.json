@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_49b55e1ef140",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling HealthLink Navigator, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, my doctor said she'd send a referral to a cardiologist, but I haven't heard anything and it's been two weeks."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry for the wait. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Daniel Reyes, born March 4th, 1972."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Daniel. I see a referral from Dr. Whitfield to Dr. Osei at Lakeside Cardiology, submitted on the 2nd, but it's still pending insurance authorization."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh, so it's stuck? What do I need to do?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Nothing on your end yet. I can escalate it to our authorization team right now and request expedited review since it's been over ten days."
+      },
+      {
+        "speaker": "patient",
+        "text": "That would be great, I've been having some chest tightness."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'll flag that as urgent. You should get a call from Lakeside Cardiology within 48 hours to schedule."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, thank you. Should I call them myself too?"
+      },
+      {
+        "speaker": "agent",
+        "text": "You can, but let's give it two business days first. I'll also send you a text confirmation once the authorization clears."
+      },
+      {
+        "speaker": "patient",
+        "text": "Sounds good. I appreciate your help."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

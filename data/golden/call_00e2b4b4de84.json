@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_00e2b4b4de84",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Health navigation line, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a refill on my blood pressure medicine. It's lisinopril, 10 milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help with that. Can I get your name and date of birth to pull up your record?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Carol Jennings, born March 4th, 1968."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Carol. I see your lisinopril prescription with Dr. Patel, last filled about a month ago at Green Oak Pharmacy. Is that still the right pharmacy?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that's the one on Fifth Street."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great. I'll send a refill request to Green Oak Pharmacy for the same dosage. You have two refills remaining, so this should go through without needing new approval."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good, I was worried I'd have to wait for the doctor."
+      },
+      {
+        "speaker": "agent",
+        "text": "No wait needed this time. It should be ready for pickup within a couple hours. Anything else I can help with?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Carol. Take care and have a great day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

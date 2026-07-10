@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_60d02834b9ed",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Willowbrook Care Navigation. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Patton. I have a work trip come up."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your full name and date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Marcus Feld, born April 3rd, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. I see your appointment is this Thursday at 10 AM. What day works better for you?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Maybe the following Monday, if he has anything in the afternoon?"
+      },
+      {
+        "speaker": "agent",
+        "text": "He has an opening Monday at 2:15 PM. Would that work?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that's perfect."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I've moved your appointment to Monday at 2:15 PM with Dr. Patton. You'll get a confirmation text shortly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Awesome, thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Marcus. Have a safe trip and see you Monday."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

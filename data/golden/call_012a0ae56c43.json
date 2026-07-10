@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_012a0ae56c43",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I'm wondering if a dermatologist visit is covered under my plan. I have Bright Path Silver PPO."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can check that. Can I get your date of birth and member ID to pull up your plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yeah, it's March 3rd, 1987, and the ID is BP44567123."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, thanks. Looking at your plan now... dermatology is covered as a specialist visit, with a forty dollar copay."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Do I need a referral from my primary doctor first?"
+      },
+      {
+        "speaker": "agent",
+        "text": "No referral needed for this plan, you can schedule directly with any in-network dermatologist."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's a relief. Is Dr. Ellen Cho at Lakeside Dermatology in-network?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check... yes, Dr. Cho at Lakeside Dermatology is in-network under Bright Path Silver PPO."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, that's exactly what I needed to know. Thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome! Just bring your insurance card to the appointment. Anything else I can help with?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Thanks again."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

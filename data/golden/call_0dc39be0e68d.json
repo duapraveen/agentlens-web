@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_0dc39be0e68d",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, my doctor said she'd send a referral to a cardiologist, but I don't know if it went through yet."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can check that for you. Can I get your name and date of birth, please?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Daniel Foster, born March 4th, 1972."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Daniel. I see a referral from Dr. Reyes to Dr. Whitfield at Lakeside Cardiology, submitted yesterday and approved this morning."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Do I need to call them myself to book an appointment?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, you'll want to call Lakeside Cardiology directly at 555-201-3390 and mention the referral number, which is R-88214."
+      },
+      {
+        "speaker": "patient",
+        "text": "Got it, R-88214. Will they already have my insurance info?"
+      },
+      {
+        "speaker": "agent",
+        "text": "They should, since it's attached to the referral, but it's a good idea to have your insurance card ready just in case."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, that's really helpful. Thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Daniel. Is there anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Thanks again."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

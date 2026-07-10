@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_28a206a4775f",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverside Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a refill on my blood pressure medication. It's lisinopril, ten milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sandra Whitfield, March 4th, 1968."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Sandra. I see your lisinopril prescription from Dr. Newell, last filled at Cedar Pharmacy on Maple Street. Is that still your preferred pharmacy?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, same one."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, and you have two refills remaining, so I can send this one through right now. It should be ready within a couple hours."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's perfect, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome. I've submitted the refill request to Cedar Pharmacy. You'll get a text when it's ready for pickup."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, I appreciate it."
+      },
+      {
+        "speaker": "agent",
+        "text": "Anytime, Sandra. Take care, and have a good rest of your day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

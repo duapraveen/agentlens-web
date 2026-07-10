@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_1ef4b496c915",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling HarborPoint Care Line, this is Ava. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I've had a really bad headache since yesterday and now my vision's a little blurry."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, I want to check a few things quickly. Any weakness, numbness, or trouble speaking?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, none of that. Just the headache and blurry vision, and some nausea."
+      },
+      {
+        "speaker": "agent",
+        "text": "Have you had any fever, neck stiffness, or recent head injury?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No fever, no injury. My neck feels fine too."
+      },
+      {
+        "speaker": "agent",
+        "text": "Given the sudden blurry vision with a severe headache, I'd like you to be seen today rather than wait. Can you get to urgent care this afternoon?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yeah, there's one near my house. I can go in the next hour."
+      },
+      {
+        "speaker": "agent",
+        "text": "Good. If your vision worsens, you get weakness, or the headache becomes the worst you've ever had, go straight to the ER instead."
+      },
+      {
+        "speaker": "patient",
+        "text": "Understood. I'll head to urgent care now."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'll note this visit in your file, Mr. Delgado. Feel better soon, and call back if anything changes."
+      },
+      {
+        "speaker": "patient",
+        "text": "Will do, thank you."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

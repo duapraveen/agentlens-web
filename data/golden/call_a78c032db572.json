@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_a78c032db572",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator, this is Alex. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I want to know if a physical therapist I found is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can check that. Can I get your name and date of birth, please?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Dana Whitfield, born March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Dana. I see you're on the Bright Path Silver PPO plan. What's the provider's name or clinic?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's called Riverbend Physical Therapy, on Elm Street."
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check... yes, Riverbend Physical Therapy is in-network with your plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good, that's a relief. Will I still have a copay?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, your plan shows a $30 copay per visit for in-network physical therapy."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that works. Thank you so much for checking."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Dana. Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Have a good day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_e025a6187462",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I want to know if my plan covers a dermatologist visit. I have a mole I want checked."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, let me pull that up. Can I get your name and date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Carla Ibsen, born March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I see you're on the Bluewell Silver Plan. Looking at your coverage, physical therapy visits require a fifty dollar copay and prior authorization after six visits."
+      },
+      {
+        "speaker": "patient",
+        "text": "Um, that's not what I asked. I asked about a dermatologist, not physical therapy."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're right, let me recheck that. Sorry about the mix-up, one moment."
+      },
+      {
+        "speaker": "patient",
+        "text": "No problem, take your time."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, here we go. Dermatology visits are covered under your plan with a thirty dollar copay, no referral needed."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, that's what I needed to know. Thanks."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Carla. Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Have a good one."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "wrong_retrieval",
+    "pipeline_stage": "retrieval",
+    "severity": "P1"
+  }
+}

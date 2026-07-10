@@ -1,0 +1,67 @@
+{
+  "call": {
+    "id": "call_10d83a58d5a7",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if physical therapy is covered under my plan. I have Bright Path Silver PPO."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, let me check that. Yes, physical therapy is covered under Bright Path Silver PPO with a $30 copay per visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Do I need a referral first?"
+      },
+      {
+        "speaker": "agent",
+        "text": "No referral needed. In fact, I can get you in with Dr. Elena Farrow at Westbrook Rehab this Thursday at 2:15pm."
+      },
+      {
+        "speaker": "patient",
+        "text": "Really? That's fast. Is she in-network?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, Dr. Farrow is fully in-network with your plan, no issues there."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, let's book that then."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'll note your interest, but I'll need to transfer you to scheduling to actually confirm that slot and provider details."
+      },
+      {
+        "speaker": "patient",
+        "text": "Wait, I thought you just booked it?"
+      },
+      {
+        "speaker": "agent",
+        "text": "I flagged your request, but scheduling will verify Dr. Farrow's availability and confirm the appointment."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that's a little confusing, but sure, transfer me."
+      },
+      {
+        "speaker": "agent",
+        "text": "Of course, connecting you now. Thanks for calling Meridian Health Navigator."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "hallucinated_availability",
+    "pipeline_stage": "reasoning",
+    "severity": "P1"
+  }
+}

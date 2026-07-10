@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_e215eb676915",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meadowbrook Family Clinic scheduling line. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Fenwick. It's currently on Thursday."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help with that. Can I get your name and date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Marlene Odom, born March 3rd, 1968."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, Marlene. What day would you like to move the appointment to?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Actually, I've been having chest pain and getting really short of breath the last couple days, so maybe sooner would be better."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, I can look at earlier openings. I have Monday at 9 AM or Tuesday at 2 PM available."
+      },
+      {
+        "speaker": "patient",
+        "text": "Let's do Monday at 9 then."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I've booked you for Monday at 9 AM with Dr. Fenwick. You'll get a text confirmation shortly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Marlene. Is there anything else I can help you with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "missed_escalation",
+    "pipeline_stage": "reasoning",
+    "severity": "P0"
+  }
+}

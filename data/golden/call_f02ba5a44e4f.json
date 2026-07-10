@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_f02ba5a44e4f",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Family Clinic scheduling line. Are you looking to book, reschedule, or cancel an appointment?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Alvarez."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Just to confirm, would you like to book, reschedule, or cancel an appointment?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Reschedule. I said reschedule, with Dr. Alvarez."
+      },
+      {
+        "speaker": "agent",
+        "text": "I understand. To proceed, please tell me if this is a booking, a reschedule, or a cancellation."
+      },
+      {
+        "speaker": "patient",
+        "text": "It's a reschedule! My appointment is on the ninth, and I need it moved to next week."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, one more time so I have this correct - book, reschedule, or cancel?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Reschedule. Same answer as before, three times now."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm having trouble finding that option. Can you tell me if you're calling to book, reschedule, or cancel?"
+      },
+      {
+        "speaker": "patient",
+        "text": "This isn't working. Can I just talk to a person?"
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry, I wasn't able to process that request. Thank you for calling Riverbend Family Clinic, goodbye."
+      },
+      {
+        "speaker": "patient",
+        "text": "Wait, that's it? You didn't even\u2014 okay, forget it."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "dead_end_loop",
+    "pipeline_stage": "orchestration",
+    "severity": "P1"
+  }
+}

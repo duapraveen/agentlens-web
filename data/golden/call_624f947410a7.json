@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_624f947410a7",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Meridian Health Navigator line. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a referral to a cardiologist. Dr. Sanjay Patel wants me to see one for my heart palpitations."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can you give me your member ID number, please?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's 8-4-7-2-1-9-3."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, I have your member ID as 8-4-7-2-1-9-8. Let me pull up your account."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, um, sure."
+      },
+      {
+        "speaker": "agent",
+        "text": "I see a referral request from Dr. Patel dated last week. Would you like me to send that to Cascade Cardiology Group?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that's the one. Can you tell me if I need a new prescription card first?"
+      },
+      {
+        "speaker": "agent",
+        "text": "No new card needed, your existing coverage applies. I'll submit the referral now and you should get a confirmation by email."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, thank you so much for your help."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome. Is there anything else I can help you with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Have a good day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "transcription_noise_identifier",
+    "pipeline_stage": "transcription",
+    "severity": "P1"
+  }
+}

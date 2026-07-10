@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_108600c5942d",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, my doctor said I need to see a rheumatologist, but I don't know how to get the referral started."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Grace Talbot, born March 4th, 1979."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Grace. I see Dr. Ellen Park referred you for joint pain evaluation on Tuesday. Let me check which specialists are in-network for your plan, the Coastal Advantage PPO."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that sounds right. Is there someone close to Riverdale?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, Dr. Samuel Oduya at Riverdale Joint Care is in-network and accepting new patients. I can send the referral request directly to his office."
+      },
+      {
+        "speaker": "patient",
+        "text": "That would be great, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "Done. The referral's been submitted, and their office should call within two business days to schedule. I'll also text you their number, 555-0148, in case you want to call sooner."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, I appreciate that."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Grace. Is there anything else I can help you with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "Glad I could help. Take care, and feel better soon."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

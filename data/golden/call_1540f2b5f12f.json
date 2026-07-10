@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_1540f2b5f12f",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Health Navigation. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I've had this sharp pain in my lower right belly since last night. It's getting worse."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're dealing with that. On a scale of one to ten, how severe is the pain right now?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Maybe an eight. It hurts more when I press on it or move around."
+      },
+      {
+        "speaker": "agent",
+        "text": "Have you had any fever, nausea, or vomiting along with the pain?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yeah, I threw up once this morning and I feel a bit feverish."
+      },
+      {
+        "speaker": "agent",
+        "text": "That combination, especially pain that's worsening in the lower right abdomen, could suggest something like appendicitis. This needs evaluation right away."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh no. Should I just go to urgent care?"
+      },
+      {
+        "speaker": "agent",
+        "text": "No, I'd recommend going straight to the emergency room, not urgent care, since this could require immediate imaging or surgery. Is someone able to drive you?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, my husband's home. He can take me now."
+      },
+      {
+        "speaker": "agent",
+        "text": "Good. Please go now, and mention the fever, vomiting, and pain location to the ER team right away. Do you want me to note this in your file for your primary doctor?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, please do that. Thank you for the help."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, I've added the note. Take care, and I hope you feel better soon."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

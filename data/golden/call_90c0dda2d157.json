@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_90c0dda2d157",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Rivergate Clinic scheduling line. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Alvarez. It's currently on the 14th."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help with that. Can I get your full name and date of birth, please?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Marissa Beaumont, born March 3rd, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, Melissa Beaumont, thank you. What day would you like to move your appointment to?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Um, actually can we push it to next Thursday instead of the 14th?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure thing. I have you moved to Thursday the 21st at 10 a.m. with Dr. Alvarez."
+      },
+      {
+        "speaker": "patient",
+        "text": "That works. Do I need to bring anything with me?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Just your insurance card and a photo ID. You'll get a confirmation text shortly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Melissa. Have a good rest of your day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "transcription_noise_identifier",
+    "pipeline_stage": "transcription",
+    "severity": "P1"
+  }
+}

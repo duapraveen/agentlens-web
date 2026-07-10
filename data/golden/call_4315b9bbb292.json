@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_4315b9bbb292",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Meadowbrook Care Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Kessler. Something came up at work."
+      },
+      {
+        "speaker": "agent",
+        "text": "No problem. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Marcus Webb, born March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. I see your appointment with Dr. Kessler is this Thursday at 2 PM. What day works better for you?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Could we do next Tuesday instead, maybe in the morning?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check... I have Tuesday at 9:30 AM or 11 AM available."
+      },
+      {
+        "speaker": "patient",
+        "text": "9:30 works great."
+      },
+      {
+        "speaker": "agent",
+        "text": "Perfect, I've moved your appointment to Tuesday at 9:30 AM with Dr. Kessler. You'll get a confirmation text shortly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Awesome, thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Marcus. Is there anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Have a good day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

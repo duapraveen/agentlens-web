@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_6504d0afc19e",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Bright Path Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a refill on my blood pressure medication. It's lisinopril, ten milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Daniel Reyes, born March 4th, 1972."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Daniel. I see your last fill was about a month ago at Cedar Grove Pharmacy. Would you like it sent there again?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that's the one, on Willow Street."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Your prescription still has two refills remaining, so I'll send the request to Cedar Grove Pharmacy now."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, how long until it's ready?"
+      },
+      {
+        "speaker": "agent",
+        "text": "It usually takes about two hours. They'll text you when it's ready for pickup."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Daniel. Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Have a good day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

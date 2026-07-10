@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_28ec1a986536",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if a physical therapist is covered under my plan. My name's Renee Castillo."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, Renee. Can you give me your date of birth and plan name so I can pull that up?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yeah, it's March 3rd, 1985, and I'm on the Bright Path Silver plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, thanks. Do you have a specific provider or clinic in mind, or just checking general PT coverage?"
+      },
+      {
+        "speaker": "patient",
+        "text": "There's a place called Oakview Physical Therapy on Grant Street. Someone recommended them."
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check that... Yes, Oakview Physical Therapy is in-network with Bright Path Silver. You'd have a $30 copay per visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh perfect, that's way better than I expected."
+      },
+      {
+        "speaker": "agent",
+        "text": "You do need a referral first, though, since your plan requires one for specialist visits."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, I'll call my primary doctor tomorrow for that then."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sounds good. Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks so much for checking."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

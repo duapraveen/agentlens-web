@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_468bb3f363a5",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Bright Path Health Line. This is Ava, your care navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a refill on my blood pressure medicine. I think I'm almost out."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your full name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Marcus Feldt, born June 3rd, 1968."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. I see a prescription for Lisinopril 10 milligrams, one tablet daily, last filled about a month ago at Cedar Grove Pharmacy. Is that the one?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that's it. I have maybe two days left."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. I'll send a refill request to Cedar Grove Pharmacy on Fifth Street right now for the same dosage."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, thank you. How long before it's ready?"
+      },
+      {
+        "speaker": "agent",
+        "text": "They usually process refills within a couple hours. I'd say it should be ready for pickup by this afternoon."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, that works for me."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're all set, Marcus. Is there anything else I can help you with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks so much."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

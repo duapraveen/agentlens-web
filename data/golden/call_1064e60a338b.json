@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_1064e60a338b",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator. This is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, my doctor said she's sending a referral to a dermatologist, but I haven't heard anything yet."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can check that for you. Can I get your name and date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Carla Medina, born March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Carla. I see Dr. Owens submitted a referral to Lakeside Dermatology two days ago. It's been approved."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Do I need to call them myself to book?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, you'll want to call Lakeside Dermatology directly at 555-201-3487 to schedule. Mention the referral number, which is R-88234."
+      },
+      {
+        "speaker": "patient",
+        "text": "Got it, 555-201-3487, referral R-88234."
+      },
+      {
+        "speaker": "agent",
+        "text": "Exactly right. Also, your plan covers this specialist visit with just a $30 copay, no additional authorization needed."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's a relief. Thank you for clearing this up."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Carla. Is there anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks again."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

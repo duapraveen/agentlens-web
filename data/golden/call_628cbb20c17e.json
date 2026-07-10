@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_628cbb20c17e",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if a physical therapist is covered under my plan. It's Dr. Renner's office."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can check that. Can I get your name and date of birth to pull up your plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Marcus Ibold, born March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. I see you're on the Silverline PPO plan. Let me check Dr. Renner's network status now."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, appreciate it."
+      },
+      {
+        "speaker": "agent",
+        "text": "Good news\u2014Dr. Renner's office is in-network under Silverline PPO. You'd just have a $30 copay per visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh perfect, that's way better than I expected."
+      },
+      {
+        "speaker": "agent",
+        "text": "Glad to hear it. You also don't need a referral for physical therapy on this plan, just a visit limit of 20 sessions per year."
+      },
+      {
+        "speaker": "patient",
+        "text": "Got it, that's really helpful, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Marcus. Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks again."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

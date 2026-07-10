@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_7d14d2431d19",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Meridian Health Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to refill my blood pressure medication, lisinopril. I think it's ten milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, let me pull that up. I see a prescription on file for Sarah Kensington under Dr. Amelia Torres, who specializes in pediatric dermatology."
+      },
+      {
+        "speaker": "patient",
+        "text": "Um, that's not right. Dr. Torres is my cardiologist, not a pediatric dermatologist."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're right, apologies, let me re-check that record. Okay, I've got the correct file now, Dr. Torres, cardiology, and your lisinopril 10 milligram prescription is active."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, thank you. Can you send the refill to my usual pharmacy?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, I have Riverbend Pharmacy on file. I'll send the refill request there now."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, how long should that take?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Typically one to two business days. You'll get a text when it's ready for pickup."
+      },
+      {
+        "speaker": "patient",
+        "text": "Sounds good, thanks for fixing that mix-up."
+      },
+      {
+        "speaker": "agent",
+        "text": "Of course, happy to help. Is there anything else you need today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Thanks again."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "wrong_retrieval",
+    "pipeline_stage": "retrieval",
+    "severity": "P1"
+  }
+}

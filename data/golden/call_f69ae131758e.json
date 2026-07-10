@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_f69ae131758e",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if physical therapy at Riverbend Rehab is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can check that for you. Can I get your name and date of birth to pull up your plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Daniel Ortiz, born March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Daniel. I see you're on the Horizon Silver PPO plan. Let me look up Riverbend Rehab's network status."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, appreciate it."
+      },
+      {
+        "speaker": "agent",
+        "text": "Good news \u2014 Riverbend Rehab is in-network under your plan, and outpatient physical therapy is covered with a $30 copay per visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh great, that's a relief. Is there a limit on how many visits are covered?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, your plan allows up to 20 physical therapy visits per calendar year."
+      },
+      {
+        "speaker": "patient",
+        "text": "That should be plenty. Thanks so much for checking."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Daniel. Is there anything else I can help you with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thank you."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_64c1a32ede94",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if a physical therapist I found is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can check that. Can I get your name and date of birth to pull up your plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, it's Karen Whitfield, born March 4th, 1979."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Karen. I see you're on the Silverline Choice PPO plan. What's the provider's name or clinic?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Dr. Nolan Reyes at Brightpath Physical Therapy."
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check... good news, Brightpath Physical Therapy is in-network under your plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh perfect, that's a relief. Do I need a referral first?"
+      },
+      {
+        "speaker": "agent",
+        "text": "No referral needed for your plan, just a copay of twenty-five dollars per visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, that's exactly what I needed to know. Thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Karen. Have a good rest of your day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

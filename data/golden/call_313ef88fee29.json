@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_313ef88fee29",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, my doctor said she'd send a referral to a dermatologist but I never got any details."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can check that for you. Can I get your name and date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, Nathan Hale, born March 4th, 1980."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Nathan. I see Dr. Okafor submitted a referral on Tuesday to Crestview Dermatology Group."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Do I need to call them myself or will they reach out?"
+      },
+      {
+        "speaker": "agent",
+        "text": "You can call them directly to schedule, or I can transfer the referral info to their scheduling line right now if you'd like."
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, please transfer it. That'd save me a step."
+      },
+      {
+        "speaker": "agent",
+        "text": "Done. Crestview has your referral number 88214 and should call within two business days, but you can also dial them at 555-201-3390."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, thank you so much for the help."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Nathan. Anything else before I let you go?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Have a good day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

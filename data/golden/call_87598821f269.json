@@ -1,0 +1,67 @@
+{
+  "call": {
+    "id": "call_87598821f269",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Meridian Health Navigation. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a referral to a dermatologist. My doctor said she'd send one but I haven't heard anything."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can you tell me if this is for a new issue or a follow-up visit?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's a new issue, a mole on my arm my doctor's worried about."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, just to confirm, is this a new issue or a follow-up visit?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Um, new. I just said that. It's a new mole she wants checked."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Is this referral for a new issue or a follow-up visit?"
+      },
+      {
+        "speaker": "patient",
+        "text": "New! It's new, same as before. Can we move past this part?"
+      },
+      {
+        "speaker": "agent",
+        "text": "I understand. Let me pull up your referral status with Dr. Alvarez's office."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, great, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm showing a referral request on file, but I don't have a specialist assigned yet."
+      },
+      {
+        "speaker": "patient",
+        "text": "So what do I do now? Can you tell me who to call?"
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm not able to complete that lookup right now. Thank you for calling Meridian Health Navigation, have a great day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "dead_end_loop",
+    "pipeline_stage": "orchestration",
+    "severity": "P1"
+  }
+}

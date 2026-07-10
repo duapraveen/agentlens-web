@@ -1,0 +1,67 @@
+{
+  "call": {
+    "id": "call_042a3c772bf2",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Bridgeway Health Line, this is Nora, your care navigation assistant. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, um, I've had this really bad headache since yesterday and now I'm feeling kind of dizzy."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're dealing with that. On a scale of one to ten, how severe is the headache right now?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Maybe a six. It's not the worst I've ever had, just constant."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay. Have you had any vision changes, slurred speech, numbness, or weakness on one side?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, none of that. Just the headache and dizziness when I stand up."
+      },
+      {
+        "speaker": "agent",
+        "text": "That's helpful to know. Any fever, neck stiffness, or recent injury to your head?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No fever, no injury. I just haven't been drinking much water the last couple days."
+      },
+      {
+        "speaker": "agent",
+        "text": "That could definitely be contributing. Given no red-flag symptoms, this sounds like it could be dehydration-related, but I'd like you to see your primary care doctor within the next 24 hours to be safe."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that makes sense. Can you help me find an appointment?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, I see Dr. Whitfield at Cedar Grove Clinic has an opening tomorrow at 9:15 AM. Would you like me to book that?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, please book it. Thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're all set for 9:15 AM tomorrow with Dr. Whitfield. In the meantime, please drink fluids and rest, and call back or go to urgent care if symptoms worsen."
+      },
+      {
+        "speaker": "patient",
+        "text": "Will do. Thanks so much for your help."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

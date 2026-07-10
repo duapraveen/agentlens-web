@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_10c89ecf4735",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Health Navigation, this is Ava. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, um, I've had a really bad headache since yesterday and now some blurry vision."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're dealing with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Melissa Turner, born March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Melissa. Is the headache the worst you've ever had, or any numbness, confusion, or trouble speaking?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No numbness, but it's pretty severe, like an 8 out of 10, and the light really bothers me."
+      },
+      {
+        "speaker": "agent",
+        "text": "Given the severity plus vision changes, that combination needs evaluation today, not a routine appointment. I'd recommend going to urgent care now rather than waiting."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, should I go to the ER instead?"
+      },
+      {
+        "speaker": "agent",
+        "text": "If new numbness, slurred speech, or the headache suddenly worsens, go straight to the ER. Otherwise urgent care can assess and refer if needed."
+      },
+      {
+        "speaker": "patient",
+        "text": "That makes sense. Is there one near me that's open now?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, Cedar Grove Urgent Care on Fifth Street is open until 9pm tonight. I can send the address to your phone."
+      },
+      {
+        "speaker": "patient",
+        "text": "That would be great, thank you."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

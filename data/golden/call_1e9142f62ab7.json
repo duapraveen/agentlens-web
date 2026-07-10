@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_1e9142f62ab7",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling HarborPoint Health Line, this is Ana, your virtual care assistant. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, um, I've had a fever and this pounding headache since last night. It's not going away."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're feeling this way. Can you tell me your temperature, if you've checked it, and whether you have any stiff neck, rash, or confusion?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It was 101.4 about an hour ago. No rash, no confusion, but my neck feels a little tight."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay. Any sensitivity to light, vomiting, or trouble staying awake?"
+      },
+      {
+        "speaker": "patient",
+        "text": "A little light sensitivity, yeah. No vomiting though."
+      },
+      {
+        "speaker": "agent",
+        "text": "Given the fever, neck tightness, and light sensitivity together, I'd like you to be seen today rather than wait. This combination needs an in-person check to rule out something serious."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh. Should I go to the ER or urgent care?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Given the neck stiffness, please go to the nearest emergency room now rather than urgent care, just to be safe. Do you have someone who can drive you?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yeah, my roommate can take me right now."
+      },
+      {
+        "speaker": "agent",
+        "text": "Good. Bring a list of any medications you're on, and mention the fever, headache, and neck tightness together when you check in. I'll send a note to Dr. Ferris's office too."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, thank you, I'll head there now."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

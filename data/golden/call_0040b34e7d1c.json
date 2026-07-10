@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_0040b34e7d1c",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigation. This is Ava, how can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, my doctor said I need a referral to a cardiologist, but I don't know how to get one."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Daniel Whitfield, born March 4th, 1972."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Daniel. I see Dr. Kessler's office requested a referral for you to Dr. Priya Anand, cardiology, dated yesterday."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good, so is it already approved?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, it's approved under your Sunstone Gold plan. You can schedule directly with Dr. Anand's office now."
+      },
+      {
+        "speaker": "patient",
+        "text": "Do I need to bring anything to that appointment?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Just your insurance card and the referral number, which is R-4482. I can text it to you."
+      },
+      {
+        "speaker": "patient",
+        "text": "That would be great, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sending it now. Anything else I can help with?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks so much."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

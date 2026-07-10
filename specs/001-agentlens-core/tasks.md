@@ -19,12 +19,12 @@ Status legend: ☐ not started · ◐ in progress · ☑ done
 
 | Status | ID | Task | AC |
 |---|---|---|---|
-| ☐ | T101 | Scenario & failure-mode taxonomy | AC-7.1, AC-7.2 |
-| ☐ | T102 | Versioned corpus generation prompt | AC-7.1 |
-| ☐ | T103 | Transcript generator (Call + GroundTruthLabel) | AC-7.2, AC-7.3 |
-| ☐ | T104 | Corpus generation job (`--count/--failure-rate/--seed`) | AC-7.1, AC-7.2 |
-| ☐ | T105 | Golden-set freeze job (stratified, append-only) | AC-7.4 |
-| ☐ | T106 | Run generation + commit golden set (user-approved spend) | AC-7.1–7.4 |
+| ☑ | T101 | Scenario & failure-mode taxonomy | AC-7.1, AC-7.2 |
+| ☑ | T102 | Versioned corpus generation prompt | AC-7.1 |
+| ☑ | T103 | Transcript generator (Call + GroundTruthLabel) | AC-7.2, AC-7.3 |
+| ☑ | T104 | Corpus generation job (`--count/--failure-rate/--seed`) | AC-7.1, AC-7.2 |
+| ☑ | T105 | Golden-set freeze job (stratified, append-only) | AC-7.4 |
+| ☑ | T106 | Run generation + commit golden set (user-approved spend) | AC-7.1–7.4 |
 
 ## Phase 2 — Evals (US-1)
 

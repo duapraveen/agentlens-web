@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_5ce998dca0c6",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meadow Health Care Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a refill on my blood pressure medicine. It's lisinopril, ten milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Karen Wells, born March 4th, 1968."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Karen. I see your lisinopril prescription from Dr. Patel at Ridgeline Family Clinic. It looks like you have one refill remaining."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good, that's a relief."
+      },
+      {
+        "speaker": "agent",
+        "text": "Which pharmacy would you like it sent to, your usual Cedar Pharmacy on Fifth Street?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that one's fine."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I've submitted the refill request to Cedar Pharmacy. It should be ready within two hours."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Karen. Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Have a good day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

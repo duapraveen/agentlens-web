@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_2314c1e8f42b",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverside Health Navigation Line. This is Ava, your care assistant. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I've had a really bad headache since yesterday and now some blurry vision in my left eye."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're dealing with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Marcus Reilly, born March 3rd, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. Besides the headache and blurry vision, any nausea, weakness, or trouble speaking?"
+      },
+      {
+        "speaker": "patient",
+        "text": "A little nauseous, no weakness though, and I can talk fine."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay. Sudden vision changes with a severe headache can be serious, so I'd like you to go to the nearest emergency room now rather than wait for a clinic visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Really? I was hoping to just see my regular doctor tomorrow."
+      },
+      {
+        "speaker": "agent",
+        "text": "I understand, but these symptoms together need evaluation today. Riverside General ER is about ten minutes from your address on file."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, I'll head there now. Should I tell them anything specific?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Tell them about the sudden headache, the vision change, and when it started. I'll also send a note to your primary doctor, Dr. Alvarez, about this visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Alright, thank you, I'm leaving now."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

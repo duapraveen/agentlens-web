@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_02045c16c207",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Health navigation line. This is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi Ava, I need a refill on my blood pressure medication. It's lisinopril, ten milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Daniel Ortiz, born March 4th, 1972."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Daniel. I see your last fill was about twenty-eight days ago at Green Leaf Pharmacy. Would you like it sent there again?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, same pharmacy is fine."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I'm submitting a refill request for lisinopril ten milligrams, thirty-day supply, to Green Leaf Pharmacy on Fifth Street."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, how long until it's ready?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Usually within a couple hours, but I'd give it until tomorrow morning just in case they need to verify with your provider."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that works for me."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're all set. Is there anything else I can help you with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks so much, Ava."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

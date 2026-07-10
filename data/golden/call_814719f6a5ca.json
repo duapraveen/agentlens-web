@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_814719f6a5ca",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Health Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Alvarez. It's currently on the 14th."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure thing. I see Dr. Alvarez here, specialty is podiatry, and the next opening is next Tuesday at 9 AM."
+      },
+      {
+        "speaker": "patient",
+        "text": "Wait, podiatry? Dr. Alvarez is my cardiologist."
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me double check that... you're right, I pulled up the wrong provider. Dr. Alvarez, cardiology, has an opening Tuesday at 2 PM instead."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, 2 PM Tuesday works better anyway."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I'll move your appointment to Tuesday the 21st at 2 PM with Dr. Alvarez, cardiology."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Bye."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, have a good day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "wrong_retrieval",
+    "pipeline_stage": "retrieval",
+    "severity": "P1"
+  }
+}

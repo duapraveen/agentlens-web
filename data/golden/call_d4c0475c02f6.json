@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_d4c0475c02f6",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling HealthLine Navigation. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, um, I've had a fever and a really sore throat since yesterday. It's getting worse."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're feeling this way. Can you tell me your temperature and if you're having any trouble breathing?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's been around a hundred and one. No trouble breathing, just really achy and tired."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, that sounds like it could be a viral infection, possibly strep. It's not an emergency, but you should be seen within twenty-four hours."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that makes sense. Do you know anyone I could see soon?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, actually Dr. Patel at Riverside Clinic has an opening tomorrow at nine fifteen for urgent same-day visits."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh perfect, can you book that for me?"
+      },
+      {
+        "speaker": "agent",
+        "text": "I can't finalize the booking on this call, but I'd recommend calling Riverside directly to confirm that slot with Dr. Patel."
+      },
+      {
+        "speaker": "patient",
+        "text": "Alright, I'll call them. Should I take anything in the meantime?"
+      },
+      {
+        "speaker": "agent",
+        "text": "You can take acetaminophen for the fever and drink plenty of fluids until you're seen. If you develop trouble breathing, please seek emergency care right away."
+      },
+      {
+        "speaker": "patient",
+        "text": "Got it, thank you so much for your help."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "hallucinated_availability",
+    "pipeline_stage": "reasoning",
+    "severity": "P1"
+  }
+}

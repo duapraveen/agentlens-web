@@ -1,0 +1,67 @@
+{
+  "call": {
+    "id": "call_8cc7eb5524d6",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Horizon Health Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I want to know if a physical therapist near me, Dr. Alvarez, is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help. Are you calling about your medical plan or your dental plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Medical. It's for physical therapy, not dental."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Just to confirm, are you calling about your medical plan or your dental plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Medical, like I said. It's the Bright Path Silver PPO plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, thank you. And is this regarding your medical plan or your dental plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Medical! I've said that three times now."
+      },
+      {
+        "speaker": "agent",
+        "text": "I understand. Let me just note that down. Can you confirm the provider's full name again?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Dr. Elena Alvarez, at Riverside Physical Therapy."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. I'm having trouble pulling up that provider's network status right now."
+      },
+      {
+        "speaker": "patient",
+        "text": "So... is she in-network or not?"
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm unable to confirm that at this time. Thank you for calling Horizon Health Navigator, have a great day."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "dead_end_loop",
+    "pipeline_stage": "orchestration",
+    "severity": "P1"
+  }
+}

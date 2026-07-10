@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_a1a9631bae64",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Horizon Health Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if physical therapy is covered under my plan. I'm on the Bright Path Silver plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check that for you. Yes, physical therapy is covered under Bright Path Silver with a twenty dollar copay per visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Do I need a referral first, or can I just book something?"
+      },
+      {
+        "speaker": "agent",
+        "text": "No referral needed. In fact, I can get you in with Dr. Lena Ferris at Cedar Grove Rehab this Thursday at 2:15pm."
+      },
+      {
+        "speaker": "patient",
+        "text": "Really? That's fast. Is she in-network though?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, Dr. Ferris is fully in-network with Bright Path Silver, so that Thursday slot would just be your standard copay."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, let's book that then."
+      },
+      {
+        "speaker": "agent",
+        "text": "I've noted your interest, but I'm actually not able to confirm that specific appointment right now. Let me transfer you to scheduling so they can verify Dr. Ferris's availability and network status directly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Wait, so is she even in-network? You just said she was."
+      },
+      {
+        "speaker": "agent",
+        "text": "I want to make sure you get accurate information, so I'd rather have the scheduling team confirm both the coverage and the appointment before we finalize anything."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that's a little confusing, but sure, go ahead and transfer me."
+      }
+    ],
+    "batch_id": "batch_59db5065",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "hallucinated_availability",
+    "pipeline_stage": "reasoning",
+    "severity": "P1"
+  }
+}
