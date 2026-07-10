@@ -107,6 +107,14 @@ independent of the judge; judge quality measured against golden ground truth.
 if not met, iterate prompt v1.1+ against golden set only; cost/call < $0.05 confirmed
 from `llm_call_log`. Est. spend: ~60 calls × haiku ≈ $0.10–0.25 per full pass.
 
+**Exit result (2026-07-10, judge v1.0 baseline):** precision 0.87 ✓, recall 0.72 ✗,
+cost 0.35¢/call ✓. Recall shortfall accepted by user decision (2026-07-10): the 5 misses
+are wrong_retrieval (0/3) and hallucinated_availability (2/3 missed) — failures a
+transcript-only judge structurally cannot verify without reference data. All
+transcript-visible modes recall 1.0; the deterministic missed_escalation gate caught 3/3
+P0 escalation failures independently. Deferred follow-up: T207 (phi_readback PHONE false
+positives, free fix).
+
 ## Phase 3 — Failure Clustering (US-2)
 
 **Goal:** Failure descriptions embedded and clustered into labeled, routable patterns.

@@ -30,12 +30,13 @@ Status legend: ☐ not started · ◐ in progress · ☑ done
 
 | Status | ID | Task | AC |
 |---|---|---|---|
-| ☐ | T201 | Eval schema (`EvalRecord`, `DeterministicCheckResult`, idempotency constraint) | AC-1.1, AC-1.3, AC-1.4 |
-| ☐ | T202 | Deterministic safety checks (escalation, PHI) | AC-1.2; Constitution I.3 |
-| ☐ | T203 | Judge rubric + prompt v1.0 (call-level, 4 dimensions) | AC-1.1 |
-| ☐ | T204 | Eval runner (idempotent, provenance-stamped) | AC-1.3, AC-1.4 |
-| ☐ | T205 | Eval job (`--scope`, cost estimate) | AC-1.1 |
-| ☐ | T206 | Judge quality metrics vs golden (P/R baseline for regression gate) | Spec §2; Constitution IV.3 |
+| ☑ | T201 | Eval schema (`EvalRecord`, `DeterministicCheckResult`, idempotency constraint) | AC-1.1, AC-1.3, AC-1.4 |
+| ☑ | T202 | Deterministic safety checks (escalation, PHI) | AC-1.2; Constitution I.3 |
+| ☑ | T203 | Judge rubric + prompt v1.0 (call-level, 4 dimensions) | AC-1.1 |
+| ☑ | T204 | Eval runner (idempotent, provenance-stamped) | AC-1.3, AC-1.4 |
+| ☑ | T205 | Eval job (`--scope`, cost estimate) | AC-1.1 |
+| ☑ | T206 | Judge quality metrics vs golden (P/R baseline for regression gate) | Spec §2; Constitution IV.3 |
+| ☐ | T207 | **Deferred:** fix `phi_readback` false positives — drop bare PHONE matches (3 FPs on clinic callback numbers); re-run checks + metrics (free, no LLM) | Constitution I.3 |
 
 ## Phase 3 — Clustering (US-2)
 
