@@ -9,11 +9,11 @@ Status legend: ☐ not started · ◐ in progress · ☑ done
 
 | Status | ID | Task | AC / Rule |
 |---|---|---|---|
-| ☐ | T001 | Project scaffold (uv, ruff, mypy --strict, pytest `llm` marker, .env.example, git init, ADR-001) | Constitution II, III |
-| ☐ | T002 | Typed settings (pydantic-settings) | Constitution III.5 |
-| ☐ | T003 | DB engine + core models (`Call`, `GroundTruthLabel`, `LLMCallLog`, `JobRun`) | AC-7.3; Constitution II (ORM only, Postgres-portable) |
-| ☐ | T004 | Privacy redaction module | Constitution V.2 |
-| ☐ | T005 | LLM gateway (structured JSON, cost cents, prompt-version tagging, failure recording) | Constitution II (single gateway) |
+| ☑ | T001 | Project scaffold (uv, ruff, mypy --strict, pytest `llm` marker, .env.example, git init, ADR-001) | Constitution II, III |
+| ☑ | T002 | Typed settings (pydantic-settings) | Constitution III.5 |
+| ☑ | T003 | DB engine + core models (`Call`, `GroundTruthLabel`, `LLMCallLog`, `JobRun`) | AC-7.3; Constitution II (ORM only, Postgres-portable) |
+| ☑ | T004 | Privacy redaction module | Constitution V.2 |
+| ☑ | T005 | LLM gateway (structured JSON, cost cents, prompt-version tagging, failure recording) | Constitution II (single gateway) |
 
 ## Phase 1 — Synthetic Corpus & Golden Set (US-7)
 
