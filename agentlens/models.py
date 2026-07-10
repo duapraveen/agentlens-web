@@ -36,6 +36,8 @@ class Call(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
     ground_truth: Mapped["GroundTruthLabel | None"] = relationship(back_populates="call")
+    eval_records: Mapped[list["EvalRecord"]] = relationship(back_populates="call")
+    check_results: Mapped[list["DeterministicCheckResult"]] = relationship(back_populates="call")
 
 
 class GroundTruthLabel(Base):
@@ -52,6 +54,56 @@ class GroundTruthLabel(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
     call: Mapped[Call] = relationship(back_populates="ground_truth")
+
+
+class EvalRecord(Base):
+    """One judge verdict for one call on one dimension (AC-1.1).
+
+    Scores are 0-100; severity is P0/P1/P2 or "none"; passed is derived
+    (severity == "none"). Provenance (AC-1.3): judge_model, prompt_version,
+    rubric_version, input_hash. The unique constraint makes re-runs
+    idempotent per judge configuration (AC-1.4).
+    """
+
+    __tablename__ = "eval_records"
+    __table_args__ = (UniqueConstraint("call_id", "dimension", "judge_model", "prompt_version"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    call_id: Mapped[str] = mapped_column(ForeignKey("calls.id"), index=True)
+    dimension: Mapped[str] = mapped_column(String(32), index=True)
+    score: Mapped[int] = mapped_column()
+    severity: Mapped[str] = mapped_column(String(8), index=True)
+    passed: Mapped[bool] = mapped_column(index=True)
+    failure_description: Mapped[str | None] = mapped_column(Text, default=None)
+    judge_reasoning: Mapped[str] = mapped_column(Text, default="")
+    pipeline_stage: Mapped[str | None] = mapped_column(String(32), default=None)
+    judge_model: Mapped[str] = mapped_column(String(64))
+    prompt_version: Mapped[str] = mapped_column(String(16))
+    rubric_version: Mapped[str] = mapped_column(String(16))
+    input_hash: Mapped[str] = mapped_column(String(64))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+    call: Mapped[Call] = relationship(back_populates="eval_records")
+
+
+class DeterministicCheckResult(Base):
+    """Rule-based safety check outcome, independent of the LLM judge (AC-1.2).
+
+    A triggered P0 check stands even when the judge scores the call clean
+    (constitution I.3). Unique per (call, check) so re-runs are idempotent.
+    """
+
+    __tablename__ = "deterministic_check_results"
+    __table_args__ = (UniqueConstraint("call_id", "check_name"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    call_id: Mapped[str] = mapped_column(ForeignKey("calls.id"), index=True)
+    check_name: Mapped[str] = mapped_column(String(64))
+    triggered: Mapped[bool] = mapped_column(index=True)
+    detail: Mapped[str | None] = mapped_column(Text, default=None)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+    call: Mapped[Call] = relationship(back_populates="check_results")
 
 
 class LLMCallLog(Base):
