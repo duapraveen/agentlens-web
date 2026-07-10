@@ -7,6 +7,7 @@ dependencies = [
     "anthropic>=0.116",
     "pydantic>=2.7",
     "pydantic-settings>=2.2",
+    "scikit-learn>=1.4",
     "sqlalchemy>=2.0.30",
     "structlog>=24.1",
 ]
@@ -29,6 +30,10 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 [tool.mypy]
 strict = true
 packages = ["agentlens"]
+
+[[tool.mypy.overrides]]
+module = "sklearn.*"
+ignore_missing_imports = true
 
 [build-system]
 requires = ["hatchling"]
