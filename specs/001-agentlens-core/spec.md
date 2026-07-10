@@ -103,9 +103,10 @@ As a product/eng leader, I want a dashboard of agent quality trends.
 ### US-7: Synthetic corpus with ground truth (enabler)
 As the team, we need realistic labeled data to measure everything above.
 
-- AC-7.1: Generator produces 150-200 patient↔agent transcripts across
-  scenarios: appointment scheduling, symptom triage, insurance/eligibility,
-  prescription refill, referral navigation.
+- AC-7.1: Generator produces 50-60 short patient↔agent transcripts (≈1-2
+  minutes of spoken conversation each) across scenarios: appointment
+  scheduling, symptom triage, insurance/eligibility, prescription refill,
+  referral navigation.
 - AC-7.2: ~30% of calls carry injected failures drawn from: transcription
   noise on identifiers, hallucinated availability, wrong retrieval (provider/
   hours), missed escalation of red-flag symptoms, unnecessary PHI readback,

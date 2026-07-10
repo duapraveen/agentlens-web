@@ -36,7 +36,8 @@ gate, and no real-API run happens without explicit user approval (AGENTS.md rule
 | OQ-2 | KMeans vs HDBSCAN | Decide **in Phase 3** by golden-set behavior; leaning KMeans + silhouette-tuned k | scikit-learn already sanctioned by constitution; HDBSCAN would need a new dependency + ADR |
 | OQ-3 | Call-level vs per-turn judging | One call-level judgment per conversation covering all four dimensions | Per-turn is ~5x cost; stage attribution is still requested from the judge at call level and validated against golden labels in Phase 2 |
 | OQ-4 | Streamlit multipage vs tabs | Multipage | Already decided in the approved UI design doc |
-| — | Corpus generator model | `claude-sonnet-5`, configurable via env | Haiku is ~3x cheaper but weaker at realistic multi-turn clinical dialogue; opus-tier is overkill. ~200 calls ≈ $1–2 total |
+| — | Corpus generator model | `claude-sonnet-5`, configurable via env | Haiku is ~3x cheaper but weaker at realistic multi-turn clinical dialogue; opus-tier is overkill. ~60 short calls ≈ $0.40–0.80 total |
+| — | Corpus size & call length | 50–60 transcripts, each ≈1–2 minutes of spoken conversation (≈6–12 short turns) | User decision 2026-07-10 (scope reduction from the original 150–200); golden set freezes 50 of them, satisfying the ≥50 constitution floor |
 | — | Cost accounting prices | Sticker prices (haiku $1/$5, sonnet-5 $3/$15 per MTok) | Sonnet 5 intro pricing expires 2026-08-31; we accept slight over-reporting instead of a date-dependent price table |
 | — | Embeddings backend | Decide in Phase 3 (sentence-transformers vs API embeddings), with ADR | Heavy dependency (torch) vs an extra API key — needs its own decision when reached |
 
@@ -74,8 +75,8 @@ the redaction boundary, and the LLM gateway (tested against mocks only).
 
 ## Phase 1 — Synthetic Corpus & Golden Set (US-7)
 
-**Goal:** 150–200 labeled synthetic calls with ~30% injected failures; frozen golden
-set (≥50 calls) checked into `data/golden/`.
+**Goal:** 50–60 short labeled synthetic calls (≈1–2 minutes each) with ~30% injected
+failures; frozen golden set (≥50 calls) checked into `data/golden/`.
 
 | ID | Task | Deliverable |
 |---|---|---|
@@ -86,7 +87,7 @@ set (≥50 calls) checked into `data/golden/`.
 | T105 | Golden freeze job | `agentlens/jobs/freeze_golden.py` — stratified selection across (scenario × failure-mode/clean); marks `is_golden`; exports JSON per call; append-only |
 | T106 | Corpus run + golden commit | Execute generation (user-approved spend), freeze golden set, commit `data/golden/` |
 
-**Exit gate:** AC-7.1–7.4 verified; est. spend ~$1–2 (generation) + ~$0.02 (smoke tests), user-approved before running.
+**Exit gate:** AC-7.1–7.4 verified; est. spend ~$0.50–1 (generation) + ~$0.02 (smoke tests), user-approved before running.
 
 ## Phase 2 — Evals: Judge + Deterministic Checks (US-1)
 
@@ -104,7 +105,7 @@ independent of the judge; judge quality measured against golden ground truth.
 
 **Exit gate:** AC-1.1–1.4 verified; precision & recall ≥ 0.80 on golden set (spec §2) —
 if not met, iterate prompt v1.1+ against golden set only; cost/call < $0.05 confirmed
-from `llm_call_log`. Est. spend: ~200 calls × haiku ≈ $0.50–1 per full pass.
+from `llm_call_log`. Est. spend: ~60 calls × haiku ≈ $0.10–0.25 per full pass.
 
 ## Phase 3 — Failure Clustering (US-2)
 
@@ -129,7 +130,7 @@ from `llm_call_log`. Est. spend: ~200 calls × haiku ≈ $0.50–1 per full pass
 | T402 | Agreement stats | `agentlens/feedback/calibration.py` — overall + per-dimension agreement %, review counts; recomputed live as reviews land (AC-4.2) |
 | T403 | Judge version comparison | Re-run a revised judge prompt/rubric on the golden set; side-by-side precision/recall/agreement vs prior version; >2-point drop flags the regression gate (AC-4.3, constitution IV.3) |
 
-**Exit gate:** AC-4.1–4.3 verified with seeded reviews in tests; comparison runs golden-set-only (~$0.30/run, user-approved).
+**Exit gate:** AC-4.1–4.3 verified with seeded reviews in tests; comparison runs golden-set-only (~$0.15/run, user-approved).
 
 ## Phase 5 — Fix Loop: Propose & Validate (US-5)
 
