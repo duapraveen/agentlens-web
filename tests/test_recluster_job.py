@@ -5,11 +5,11 @@ from pathlib import Path
 from unittest.mock import patch
 
 import pytest
-from agentlens.clustering.labeling import ClusterLabel
 from agentlens.jobs.recluster import main
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
+from agentlens.clustering.labeling import ClusterLabel
 from agentlens.llm.gateway import GatewayResult
 from agentlens.models import Base, Call, Cluster, ClusterMember, EvalRecord, JobRun
 
