@@ -134,8 +134,8 @@ silhouette ~0.01–0.03) — escalated per ADR-002 to sentence-transformers
 HDBSCAN evaluated and rejected (OQ-2 closed: KMeans). Final run: 4 labeled clusters
 over 73 failed records, purity 1.00 for 5/6 modes; `hallucinated_availability` 0.67 —
 one golden call's judge description discusses network status, not availability
-(downstream of the accepted Phase 2 recall gap on that mode, 0.33). Deviation pending
-user acceptance. Actual spend: 2.0¢ total (both labeling runs).
+(downstream of the accepted Phase 2 recall gap on that mode, 0.33). Deviation accepted
+by user decision (2026-07-10). Actual spend: 2.0¢ total (both labeling runs).
 
 ## Phase 4 — Human Feedback & Calibration (US-4)
 
