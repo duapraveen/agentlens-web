@@ -140,6 +140,7 @@ class Cluster(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
     members: Mapped[list["ClusterMember"]] = relationship(back_populates="cluster")
+    fix_proposals: Mapped[list["FixProposal"]] = relationship(back_populates="cluster")
 
 
 class ClusterMember(Base):
@@ -154,6 +155,51 @@ class ClusterMember(Base):
 
     cluster: Mapped[Cluster] = relationship(back_populates="members")
     eval_record: Mapped[EvalRecord] = relationship()
+
+
+class FixProposal(Base):
+    """One drafted fix for one cluster (AC-5.1).
+
+    Lifecycle: proposed -> validated (regression ran) -> closed. Closing a
+    fix on a P0 cluster requires a human actor (constitution V.4) — the
+    guard lives in fixes/report.py :: close_fix.
+    """
+
+    __tablename__ = "fix_proposals"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    cluster_id: Mapped[int] = mapped_column(ForeignKey("clusters.id"), index=True)
+    fix_type: Mapped[str] = mapped_column(String(32))
+    rationale: Mapped[str] = mapped_column(Text)
+    patch: Mapped[str] = mapped_column(Text)
+    status: Mapped[str] = mapped_column(String(16), default="proposed")
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+    cluster: Mapped[Cluster] = relationship(back_populates="fix_proposals")
+    regression_runs: Mapped[list["RegressionRun"]] = relationship(back_populates="fix_proposal")
+
+
+class RegressionRun(Base):
+    """One before/after regression measurement for one fix (AC-5.2, AC-5.3).
+
+    Pass rates are 0-1 fractions per dimension. regressed_dimensions lists
+    non-target dimensions whose after-rate dropped below the before-rate.
+    """
+
+    __tablename__ = "regression_runs"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    fix_proposal_id: Mapped[int] = mapped_column(ForeignKey("fix_proposals.id"), index=True)
+    batch_id: Mapped[str] = mapped_column(String(40))
+    n_before: Mapped[int] = mapped_column()
+    n_after: Mapped[int] = mapped_column()
+    before_pass_rates: Mapped[dict[str, Any]] = mapped_column(JSON)
+    after_pass_rates: Mapped[dict[str, Any]] = mapped_column(JSON)
+    target_dimension: Mapped[str] = mapped_column(String(32))
+    regressed_dimensions: Mapped[list[str]] = mapped_column(JSON)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+    fix_proposal: Mapped[FixProposal] = relationship(back_populates="regression_runs")
 
 
 class LLMCallLog(Base):
