@@ -1,19 +1,32 @@
-"""Embedding backend for failure descriptions (ADR-002: TF-IDF, batch-scoped).
+"""Embedding backend for failure descriptions (ADR-002, escalated to sentence-transformers).
 
-The vectorizer is fit on the batch being clustered, so embeddings are only
-comparable within one recluster run. Swap this module's implementation (not
-its interface) to escalate to semantic embeddings if golden purity fails.
+TF-IDF was the initial backend but failed the golden purity gate (AC-2.3);
+per the ADR-002 escalation path this module now encodes with a local
+sentence-transformers model. The model loads lazily on first use and is
+cached for the process lifetime.
 """
 
+from functools import lru_cache
+from typing import TYPE_CHECKING
+
 import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
+
+if TYPE_CHECKING:
+    from sentence_transformers import SentenceTransformer
+
+_MODEL_NAME = "all-MiniLM-L6-v2"
+
+
+@lru_cache(maxsize=1)
+def _model() -> "SentenceTransformer":
+    from sentence_transformers import SentenceTransformer
+
+    model: SentenceTransformer = SentenceTransformer(_MODEL_NAME)
+    return model
 
 
 def embed_texts(texts: list[str]) -> np.ndarray:
-    """Dense TF-IDF vectors, one row per input text. Deterministic. Raises on empty input."""
+    """L2-normalized sentence embeddings, one row per input text. Raises on empty input."""
     if not texts:
         raise ValueError("embed_texts requires at least one text")
-    vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1, 2))
-    matrix = vectorizer.fit_transform(texts)
-    dense: np.ndarray = np.asarray(matrix.todense())
-    return dense
+    return np.asarray(_model().encode(texts, normalize_embeddings=True))

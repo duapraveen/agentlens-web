@@ -24,6 +24,14 @@ from agentlens.models import Cluster, ClusterMember, EvalRecord, JobRun, utcnow
 _SEVERITY_ORDER = ["P0", "P1", "P2"]
 
 
+def _embedding_text(record: EvalRecord) -> str:
+    """Prefix judge metadata so embeddings group by failure mechanism, not surface topic."""
+    return (
+        f"dimension: {record.dimension}. stage: {record.pipeline_stage}. "
+        f"{record.failure_description or ''}"
+    )
+
+
 def _dominant_severity(records: list[EvalRecord]) -> str:
     severities = {r.severity for r in records}
     return next((s for s in _SEVERITY_ORDER if s in severities), "P2")
@@ -78,8 +86,7 @@ def main(argv: list[str] | None = None) -> int:
         cost: list[float] = []
         n_clusters = 0
         if failures:
-            descriptions = [r.failure_description or "" for r in failures]
-            assignments = assign_clusters(embed_texts(descriptions))
+            assignments = assign_clusters(embed_texts([_embedding_text(r) for r in failures]))
             groups: dict[int, list[EvalRecord]] = {}
             for record, assigned in zip(failures, assignments, strict=True):
                 groups.setdefault(assigned, []).append(record)
