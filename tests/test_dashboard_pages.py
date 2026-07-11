@@ -129,6 +129,28 @@ def test_clusters_page_renders_cards_with_p0_guard(dash_env: str) -> None:
     assert len(fix_buttons) == 1 and fix_buttons[0].disabled  # P0 guard
 
 
+def test_review_queue_submit_advances_to_clear(dash_env: str) -> None:
+    at = AppTest.from_file(str(_PAGES / "review_queue.py"), default_timeout=10)
+    at.run()
+    assert not at.exception
+    # the seeded P1 finding is pending
+    assert any("call_dash_1" in s.value for s in at.subheader)
+    assert at.button[0].disabled  # Submit & Next disabled until a verdict is chosen
+    at.radio[0].set_value("Agree")
+    at.text_area[0].set_value("confirmed").run()
+    at.button[0].click().run()
+    assert not at.exception
+    assert any("Queue clear" in s.value for s in at.success)
+
+    from agentlens.db import open_session
+    from agentlens.models import Review
+
+    with open_session() as session:
+        review = session.query(Review).one()
+        assert review.verdict == "agree"
+        assert review.note == "confirmed"
+
+
 def test_jobs_page_renders_cards_and_estimate(dash_env: str) -> None:
     at = AppTest.from_file(str(_PAGES / "jobs.py"), default_timeout=10)
     at.run()
