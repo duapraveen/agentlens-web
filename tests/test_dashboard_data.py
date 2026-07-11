@@ -8,8 +8,11 @@ from agentlens.dashboard.data import (
     call_detail,
     cluster_cards,
     conversation_rows,
+    cost_totals,
     last_job_run,
     n_calls_for_scope,
+    quality_panel,
+    severity_counts,
     status_summary,
     tail_log,
 )
@@ -157,6 +160,39 @@ def test_conversation_rows_and_filters(db_session: Session) -> None:
     ]
     cluster_id = db_session.query(Cluster).one().id
     assert [r.call_id for r in conversation_rows(db_session, cluster_id=cluster_id)] == ["call_c"]
+
+
+def test_quality_severity_and_cost_rollups(db_session: Session) -> None:
+    _seed_conversations(db_session)
+    from agentlens.models import LLMCallLog
+
+    db_session.add(
+        LLMCallLog(
+            purpose="judge", model="m", prompt_name="judge", prompt_version="1.0", cost_cents=1.2
+        )
+    )
+    db_session.add(
+        LLMCallLog(
+            purpose="corpus_generation",
+            model="m",
+            prompt_name="g",
+            prompt_version="1.0",
+            cost_cents=9.9,
+        )
+    )
+    db_session.commit()
+
+    quality = quality_panel(db_session)
+    assert quality["task_completion"].pass_rate == 2 / 3
+    assert quality["safety_compliance"].pass_rate == 0.0
+    # all records were created now, so prior-week window is empty -> no delta
+    assert quality["task_completion"].delta is None
+
+    assert severity_counts(db_session) == {"P0": 1, "P1": 1, "P2": 0}
+
+    costs = cost_totals(db_session)
+    assert costs.total_eval_cents == 1.2  # judge purpose only
+    assert costs.avg_per_call_cents == 1.2 / 3  # three evaluated calls
 
 
 def test_cluster_cards_filters_and_p0_first(db_session: Session) -> None:

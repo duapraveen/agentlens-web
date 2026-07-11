@@ -4,7 +4,7 @@ All dashboard DB reads live here so they stay unit-testable and raw-SQL-free.
 """
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Literal
 
@@ -21,6 +21,7 @@ from agentlens.models import (
     GroundTruthLabel,
     JobRun,
     LLMCallLog,
+    utcnow,
 )
 from agentlens.prompts.judge import PROMPT_VERSION
 
@@ -213,6 +214,70 @@ def call_detail(session: Session, call_id: str) -> CallDetailData | None:
         checks=sorted(call.check_results, key=lambda c: c.check_name),
         cluster=member.cluster if member else None,
         ground_truth=call.ground_truth,
+    )
+
+
+@dataclass(frozen=True)
+class DimensionQuality:
+    """Pass rate (0-1) for one dimension, with a 7-day-vs-prior-7-day delta."""
+
+    pass_rate: float
+    delta: float | None
+
+
+def _as_utc(moment: datetime) -> datetime:
+    """SQLite drops tzinfo on read; treat naive timestamps as UTC."""
+    return moment if moment.tzinfo else moment.replace(tzinfo=UTC)
+
+
+def quality_panel(session: Session) -> dict[str, DimensionQuality]:
+    """Per-dimension pass rates plus week-over-week delta (None without prior data)."""
+    records = session.query(EvalRecord).all()
+    now = utcnow()
+    week_ago, two_weeks_ago = now - timedelta(days=7), now - timedelta(days=14)
+
+    def _rate(rows: list[EvalRecord]) -> float | None:
+        return sum(r.passed for r in rows) / len(rows) if rows else None
+
+    panel: dict[str, DimensionQuality] = {}
+    for dim in _DIMENSION_ORDER:
+        dim_records = [r for r in records if r.dimension == dim]
+        rate = _rate(dim_records)
+        if rate is None:
+            panel[dim] = DimensionQuality(pass_rate=0.0, delta=None)
+            continue
+        recent = _rate([r for r in dim_records if _as_utc(r.created_at) >= week_ago])
+        prior = _rate([r for r in dim_records if two_weeks_ago <= _as_utc(r.created_at) < week_ago])
+        delta = recent - prior if recent is not None and prior is not None else None
+        panel[dim] = DimensionQuality(pass_rate=rate, delta=delta)
+    return panel
+
+
+def severity_counts(session: Session) -> dict[str, int]:
+    """Finding counts per severity across all eval records."""
+    return {
+        sev: session.query(EvalRecord).filter(EvalRecord.severity == sev).count()
+        for sev in ("P0", "P1", "P2")
+    }
+
+
+@dataclass(frozen=True)
+class CostTotals:
+    """Cumulative judge cost and average per evaluated call (USD cents)."""
+
+    total_eval_cents: float
+    avg_per_call_cents: float
+
+
+def cost_totals(session: Session) -> CostTotals:
+    """Total judge spend to date and the per-evaluated-call average."""
+    total = sum(
+        row.cost_cents for row in session.query(LLMCallLog).filter(LLMCallLog.purpose == "judge")
+    )
+    n_calls = session.query(EvalRecord.call_id).distinct().count()
+    return CostTotals(
+        total_eval_cents=total,
+        avg_per_call_cents=total / n_calls if n_calls else 0.0,
     )
 
 

@@ -151,6 +151,21 @@ def test_review_queue_submit_advances_to_clear(dash_env: str) -> None:
         assert review.note == "confirmed"
 
 
+def test_overview_renders_all_panels(dash_env: str) -> None:
+    at = AppTest.from_file(str(_PAGES / "overview.py"), default_timeout=10)
+    at.run()
+    assert not at.exception
+    assert [s.value for s in at.subheader] == [
+        "Quality",
+        "Severity",
+        "Judge Accuracy",
+        "Top Clusters",
+    ]
+    # severity counts from the seed: one P1 finding
+    assert any("P1: 1 findings" in b.label for b in at.button)
+    assert any("Total eval cost to date" in c.value for c in at.caption)
+
+
 def test_jobs_page_renders_cards_and_estimate(dash_env: str) -> None:
     at = AppTest.from_file(str(_PAGES / "jobs.py"), default_timeout=10)
     at.run()

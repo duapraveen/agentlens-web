@@ -28,7 +28,7 @@ with open_session() as session:
             st.session_state["conv_cluster_filter"] = preset_label
 
     f1, f2, f3, f4 = st.columns([2, 2, 2, 2])
-    severity = f1.selectbox("Severity", ["All", "P0", "P1", "P2"])
+    severity = f1.selectbox("Severity", ["All", "P0", "P1", "P2"], key="conv_severity_filter")
     dimension = f2.selectbox("Dimension", ["All", *DIMENSION_ORDER])
     cluster_label = f3.selectbox("Cluster", ["All", *cluster_by_label], key="conv_cluster_filter")
     outcome_label = f4.selectbox("Outcome", ["All", "Pass only", "Fail only"])
