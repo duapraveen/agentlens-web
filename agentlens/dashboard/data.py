@@ -18,9 +18,11 @@ from agentlens.models import (
     ClusterMember,
     DeterministicCheckResult,
     EvalRecord,
+    FixProposal,
     GroundTruthLabel,
     JobRun,
     LLMCallLog,
+    RegressionRun,
     utcnow,
 )
 from agentlens.prompts.judge import PROMPT_VERSION
@@ -278,6 +280,26 @@ def cost_totals(session: Session) -> CostTotals:
     return CostTotals(
         total_eval_cents=total,
         avg_per_call_cents=total / n_calls if n_calls else 0.0,
+    )
+
+
+def latest_fix(session: Session, cluster_id: int) -> FixProposal | None:
+    """Most recent fix proposal for one cluster."""
+    return (
+        session.query(FixProposal)
+        .filter(FixProposal.cluster_id == cluster_id)
+        .order_by(FixProposal.id.desc())
+        .first()
+    )
+
+
+def latest_regression(session: Session, fix_id: int) -> RegressionRun | None:
+    """Most recent regression run for one fix."""
+    return (
+        session.query(RegressionRun)
+        .filter(RegressionRun.fix_proposal_id == fix_id)
+        .order_by(RegressionRun.id.desc())
+        .first()
     )
 
 

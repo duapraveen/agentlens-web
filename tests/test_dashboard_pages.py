@@ -166,6 +166,53 @@ def test_overview_renders_all_panels(dash_env: str) -> None:
     assert any("Total eval cost to date" in c.value for c in at.caption)
 
 
+def test_fix_workbench_shows_fix_and_regression_results(dash_env: str) -> None:
+    from agentlens.db import open_session
+    from agentlens.models import Cluster, FixProposal, RegressionRun
+
+    with open_session() as session:
+        cluster = Cluster(
+            label="loops",
+            description="d",
+            routing_suggestion="prompt_fix",
+            dominant_severity="P1",
+            size=3,
+        )
+        session.add(cluster)
+        session.flush()
+        fix = FixProposal(
+            cluster_id=cluster.id,
+            fix_type="prompt_fix",
+            rationale="rationale text",
+            patch="patch text",
+            status="validated",
+        )
+        session.add(fix)
+        session.flush()
+        session.add(
+            RegressionRun(
+                fix_proposal_id=fix.id,
+                batch_id=f"fixbatch_{fix.id}",
+                n_before=3,
+                n_after=3,
+                before_pass_rates={"task_completion": 0.0, "communication_quality": 1.0},
+                after_pass_rates={"task_completion": 1.0, "communication_quality": 0.5},
+                target_dimension="task_completion",
+                regressed_dimensions=["communication_quality"],
+            )
+        )
+        session.commit()
+
+    at = AppTest.from_file(str(_PAGES / "fix_workbench.py"), default_timeout=10)
+    at.run()
+    assert not at.exception
+    assert at.selectbox[0].options == ["loops"]  # only non-P0 clusters selectable
+    assert any("rationale text" in m.value for m in at.markdown)
+    assert at.code[0].value == "patch text"
+    # the 50pp drop on communication_quality raises the >5pp banner
+    assert any("more than 5pp" in w.value for w in at.warning)
+
+
 def test_jobs_page_renders_cards_and_estimate(dash_env: str) -> None:
     at = AppTest.from_file(str(_PAGES / "jobs.py"), default_timeout=10)
     at.run()
