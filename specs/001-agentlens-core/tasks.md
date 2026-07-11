@@ -59,10 +59,10 @@ Status legend: ☐ not started · ◐ in progress · ☑ done
 
 | Status | ID | Task | AC |
 |---|---|---|---|
-| ☐ | T501 | Fix schema (`FixProposal`, `RegressionRun`) | AC-5.1 |
-| ☐ | T502 | Fix proposal generation | AC-5.1 |
-| ☐ | T503 | Regenerate affected scenarios + re-run evals | AC-5.2 |
-| ☐ | T504 | Before/after report + P0 human-ack guard | AC-5.3, AC-5.4 |
+| ☑ | T501 | Fix schema (`FixProposal`, `RegressionRun`) | AC-5.1 |
+| ☑ | T502 | Fix proposal generation | AC-5.1 |
+| ☑ | T503 | Regenerate affected scenarios + re-run evals | AC-5.2 |
+| ☑ | T504 | Before/after report + P0 human-ack guard | AC-5.3, AC-5.4 |
 
 ## Phase 6 — Dashboard (US-3, US-6)
 

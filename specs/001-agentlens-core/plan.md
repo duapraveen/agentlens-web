@@ -168,6 +168,17 @@ judge (v1.1) comparison run remains available via
 
 **Exit gate:** AC-5.1–5.4 verified; one full closed-loop demo runnable end to end (spec §2). Est. spend per demo loop: regenerate ~10–20 calls + re-eval ≈ $0.30–0.60.
 
+**Exit result (2026-07-10):** Closed-loop demo on cluster 3 ("Failure to escalate acute
+cardiac red flags", P0, 12 members / 5 distinct calls): fix_id 1 (prompt_fix, mandatory
+escalation protocol) → 5/5 regenerated + evaluated → safety_compliance pass rate
+0.0 → 1.0, every other dimension improved, no unrelated-dimension regressions;
+deterministic missed_escalation check 0/5 triggered on the regenerated batch (agrees
+with the judge). Fix status "validated" — cannot be auto-closed (P0 cluster, human ack
+required). Actual spend: 7.7¢ (proposal 0.3¢ + regression 7.4¢). Known limitation:
+regeneration is not counterfactual — deferred design options recorded in
+docs/notes/2026-07-10-counterfactual-regression-options.md (user decision: do not
+implement for now).
+
 ## Phase 6 — Dashboard (US-3, US-6)
 
 **Goal:** The full Streamlit UI per the approved design doc. Build order comes from
