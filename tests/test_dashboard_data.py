@@ -5,6 +5,7 @@ from pathlib import Path
 from sqlalchemy.orm import Session
 
 from agentlens.dashboard.data import (
+    call_detail,
     conversation_rows,
     last_job_run,
     n_calls_for_scope,
@@ -155,3 +156,34 @@ def test_conversation_rows_and_filters(db_session: Session) -> None:
     ]
     cluster_id = db_session.query(Cluster).one().id
     assert [r.call_id for r in conversation_rows(db_session, cluster_id=cluster_id)] == ["call_c"]
+
+
+def test_call_detail_bundles_records_checks_and_cluster(db_session: Session) -> None:
+    _seed_conversations(db_session)
+    from agentlens.models import DeterministicCheckResult, GroundTruthLabel
+
+    db_session.add(
+        DeterministicCheckResult(call_id="call_c", check_name="missed_escalation", triggered=False)
+    )
+    db_session.add(
+        GroundTruthLabel(
+            call_id="call_c",
+            failure_mode="dead_end_loop",
+            pipeline_stage="orchestration",
+            severity="P1",
+        )
+    )
+    db_session.commit()
+
+    detail = call_detail(db_session, "call_c")
+    assert detail is not None
+    assert detail.call.id == "call_c"
+    assert [r.dimension for r in detail.records] == ["task_completion"]
+    assert [c.check_name for c in detail.checks] == ["missed_escalation"]
+    assert detail.cluster is not None and detail.cluster.label == "loops"
+    assert detail.ground_truth is not None
+    assert detail.ground_truth.failure_mode == "dead_end_loop"
+
+    assert call_detail(db_session, "call_missing") is None
+    unclustered = call_detail(db_session, "call_a")
+    assert unclustered is not None and unclustered.cluster is None

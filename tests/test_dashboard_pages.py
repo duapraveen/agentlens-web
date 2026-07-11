@@ -82,6 +82,28 @@ def test_conversations_page_lists_calls_with_filters(dash_env: str) -> None:
     assert any("0 calls" in c.value for c in at.caption)
 
 
+def test_call_detail_renders_transcript_scores_and_ground_truth_toggle(dash_env: str) -> None:
+    at = AppTest.from_file(str(_PAGES / "call_detail.py"), default_timeout=10)
+    at.session_state["selected_call_id"] = "call_dash_1"
+    at.run()
+    assert not at.exception
+    assert any("call_dash_1" in h.value for h in at.header)
+    assert any("Hello, how can I help?" in m.value for m in at.markdown)
+    assert len(at.expander) == 1  # one evaluated dimension
+    assert "task_completion" in at.expander[0].label
+    # engineer sees the ground-truth toggle; enabling it reports a clean call
+    at.toggle[0].set_value(True).run()
+    assert not at.exception
+    assert any("clean call" in i.value for i in at.info)
+
+
+def test_call_detail_without_selection_prompts(dash_env: str) -> None:
+    at = AppTest.from_file(str(_PAGES / "call_detail.py"), default_timeout=10)
+    at.run()
+    assert not at.exception
+    assert any("Select a call" in i.value for i in at.info)
+
+
 def test_jobs_page_renders_cards_and_estimate(dash_env: str) -> None:
     at = AppTest.from_file(str(_PAGES / "jobs.py"), default_timeout=10)
     at.run()

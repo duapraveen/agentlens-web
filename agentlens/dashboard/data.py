@@ -11,8 +11,20 @@ from typing import Literal
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from agentlens.models import Call, ClusterMember, EvalRecord, JobRun, LLMCallLog
+from agentlens.corpus.scenarios import Dimension
+from agentlens.models import (
+    Call,
+    Cluster,
+    ClusterMember,
+    DeterministicCheckResult,
+    EvalRecord,
+    GroundTruthLabel,
+    JobRun,
+    LLMCallLog,
+)
 from agentlens.prompts.judge import PROMPT_VERSION
+
+_DIMENSION_ORDER = [d.value for d in Dimension]
 
 
 @dataclass(frozen=True)
@@ -126,6 +138,44 @@ def conversation_rows(
             )
         )
     return rows
+
+
+@dataclass(frozen=True)
+class CallDetailData:
+    """Everything the Call Detail page renders for one call."""
+
+    call: Call
+    records: list[EvalRecord]
+    checks: list[DeterministicCheckResult]
+    cluster: Cluster | None
+    ground_truth: GroundTruthLabel | None
+
+
+def call_detail(session: Session, call_id: str) -> CallDetailData | None:
+    """Bundle one call's records (dimension order), checks, cluster, and ground truth."""
+    call = session.get(Call, call_id)
+    if call is None:
+        return None
+    records = sorted(
+        call.eval_records,
+        key=lambda r: (
+            _DIMENSION_ORDER.index(r.dimension) if r.dimension in _DIMENSION_ORDER else 99
+        ),
+    )
+    member = (
+        session.query(ClusterMember)
+        .filter(ClusterMember.eval_record_id.in_([r.id for r in records]))
+        .first()
+        if records
+        else None
+    )
+    return CallDetailData(
+        call=call,
+        records=records,
+        checks=sorted(call.check_results, key=lambda c: c.check_name),
+        cluster=member.cluster if member else None,
+        ground_truth=call.ground_truth,
+    )
 
 
 def n_calls_for_scope(
