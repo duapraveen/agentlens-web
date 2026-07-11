@@ -37,6 +37,10 @@ packages = ["agentlens"]
 module = "sklearn.*"
 ignore_missing_imports = true
 
+[[tool.mypy.overrides]]
+module = "pandas.*"
+ignore_missing_imports = true
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

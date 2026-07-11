@@ -5,12 +5,13 @@ from pathlib import Path
 from sqlalchemy.orm import Session
 
 from agentlens.dashboard.data import (
+    conversation_rows,
     last_job_run,
     n_calls_for_scope,
     status_summary,
     tail_log,
 )
-from agentlens.models import Call, EvalRecord, JobRun, utcnow
+from agentlens.models import Call, Cluster, ClusterMember, EvalRecord, JobRun, utcnow
 
 
 def test_status_summary_counts_and_last_eval(db_session: Session) -> None:
@@ -86,3 +87,71 @@ def test_n_calls_for_scope(db_session: Session) -> None:
 
     assert n_calls_for_scope(db_session, "full", "claude-haiku-4-5") == 3
     assert n_calls_for_scope(db_session, "unevaluated", "claude-haiku-4-5") == 2
+
+
+def _record(call_id: str, dim: str, severity: str, score: int) -> EvalRecord:
+    return EvalRecord(
+        call_id=call_id,
+        dimension=dim,
+        score=score,
+        severity=severity,
+        passed=severity == "none",
+        failure_description=None if severity == "none" else "issue",
+        judge_reasoning="r",
+        judge_model="claude-haiku-4-5",
+        prompt_version="1.0",
+        rubric_version="1.0",
+        input_hash="h",
+    )
+
+
+def _seed_conversations(session: Session) -> None:
+    """call_a: P0 safety fail; call_b: clean; call_c: P1 task fail, in a cluster."""
+    for call_id in ("call_a", "call_b", "call_c"):
+        session.add(
+            Call(
+                id=call_id,
+                scenario="symptom_triage",
+                transcript=[{"speaker": "agent", "text": "hi"}],
+                batch_id="b1",
+            )
+        )
+    session.add(_record("call_a", "safety_compliance", "P0", 10))
+    session.add(_record("call_a", "task_completion", "none", 90))
+    session.add(_record("call_b", "task_completion", "none", 95))
+    clustered = _record("call_c", "task_completion", "P1", 40)
+    session.add(clustered)
+    cluster = Cluster(
+        label="loops",
+        description="",
+        routing_suggestion="prompt_fix",
+        dominant_severity="P1",
+        size=1,
+    )
+    session.add(cluster)
+    session.flush()
+    session.add(ClusterMember(cluster_id=cluster.id, eval_record_id=clustered.id))
+    session.commit()
+
+
+def test_conversation_rows_and_filters(db_session: Session) -> None:
+    _seed_conversations(db_session)
+
+    rows = conversation_rows(db_session)
+    assert [r.call_id for r in rows] == ["call_a", "call_b", "call_c"]
+    a = rows[0]
+    assert a.failed_dimensions == {"safety_compliance"}
+    assert a.has_p0 is True
+    assert a.avg_score == 50.0
+
+    assert [r.call_id for r in conversation_rows(db_session, severity="P0")] == ["call_a"]
+    assert [r.call_id for r in conversation_rows(db_session, dimension="task_completion")] == [
+        "call_c"
+    ]
+    assert [r.call_id for r in conversation_rows(db_session, outcome="pass")] == ["call_b"]
+    assert [r.call_id for r in conversation_rows(db_session, outcome="fail")] == [
+        "call_a",
+        "call_c",
+    ]
+    cluster_id = db_session.query(Cluster).one().id
+    assert [r.call_id for r in conversation_rows(db_session, cluster_id=cluster_id)] == ["call_c"]

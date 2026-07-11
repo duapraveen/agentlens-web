@@ -70,6 +70,18 @@ def dash_env(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> str:
     return url
 
 
+def test_conversations_page_lists_calls_with_filters(dash_env: str) -> None:
+    at = AppTest.from_file(str(_PAGES / "conversations.py"), default_timeout=10)
+    at.run()
+    assert not at.exception
+    # only the evaluated call appears (call_dash_2 has no eval records)
+    assert any("1 calls · 1 with failures" in c.value for c in at.caption)
+    assert [s.label for s in at.selectbox] == ["Severity", "Dimension", "Cluster", "Outcome"]
+    # a filter that excludes everything empties the table
+    at.selectbox[0].select("P0").run()
+    assert any("0 calls" in c.value for c in at.caption)
+
+
 def test_jobs_page_renders_cards_and_estimate(dash_env: str) -> None:
     at = AppTest.from_file(str(_PAGES / "jobs.py"), default_timeout=10)
     at.run()
