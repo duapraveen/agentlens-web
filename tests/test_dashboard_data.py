@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 from agentlens.dashboard.data import (
     call_detail,
+    cluster_cards,
     conversation_rows,
     last_job_run,
     n_calls_for_scope,
@@ -156,6 +157,32 @@ def test_conversation_rows_and_filters(db_session: Session) -> None:
     ]
     cluster_id = db_session.query(Cluster).one().id
     assert [r.call_id for r in conversation_rows(db_session, cluster_id=cluster_id)] == ["call_c"]
+
+
+def test_cluster_cards_filters_and_p0_first(db_session: Session) -> None:
+    p1 = Cluster(
+        label="loops",
+        description="d1",
+        routing_suggestion="prompt_fix",
+        dominant_severity="P1",
+        size=5,
+    )
+    p0 = Cluster(
+        label="phi exposure",
+        description="d2",
+        routing_suggestion="ops_process",
+        dominant_severity="P0",
+        size=2,
+    )
+    db_session.add_all([p1, p0])
+    db_session.commit()
+
+    cards = cluster_cards(db_session)
+    assert [c.label for c in cards] == ["phi exposure", "loops"]  # P0 sorted first
+    assert cards[0].is_p0 is True
+
+    assert [c.label for c in cluster_cards(db_session, routing="prompt_fix")] == ["loops"]
+    assert [c.label for c in cluster_cards(db_session, severity="P0")] == ["phi exposure"]
 
 
 def test_call_detail_bundles_records_checks_and_cluster(db_session: Session) -> None:

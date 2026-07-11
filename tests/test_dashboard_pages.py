@@ -104,6 +104,31 @@ def test_call_detail_without_selection_prompts(dash_env: str) -> None:
     assert any("Select a call" in i.value for i in at.info)
 
 
+def test_clusters_page_renders_cards_with_p0_guard(dash_env: str) -> None:
+    from agentlens.db import open_session
+    from agentlens.models import Cluster
+
+    with open_session() as session:
+        session.add(
+            Cluster(
+                label="phi exposure",
+                description="Agent reads back PHI.",
+                routing_suggestion="prompt_fix",
+                dominant_severity="P0",
+                size=2,
+            )
+        )
+        session.commit()
+
+    at = AppTest.from_file(str(_PAGES / "clusters.py"), default_timeout=10)
+    at.run()
+    assert not at.exception
+    assert any("1 clusters · 2 failures" in c.value for c in at.caption)
+    assert any("phi exposure" in s.value for s in at.subheader)
+    fix_buttons = [b for b in at.button if b.label == "Propose Fix"]
+    assert len(fix_buttons) == 1 and fix_buttons[0].disabled  # P0 guard
+
+
 def test_jobs_page_renders_cards_and_estimate(dash_env: str) -> None:
     at = AppTest.from_file(str(_PAGES / "jobs.py"), default_timeout=10)
     at.run()

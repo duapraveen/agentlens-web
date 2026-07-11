@@ -141,6 +141,44 @@ def conversation_rows(
 
 
 @dataclass(frozen=True)
+class ClusterCard:
+    """One cluster card on the Clusters page."""
+
+    cluster_id: int
+    label: str
+    description: str
+    routing: str
+    severity: str
+    size: int
+    is_p0: bool
+
+
+def cluster_cards(
+    session: Session, routing: str | None = None, severity: str | None = None
+) -> list[ClusterCard]:
+    """Cluster cards, optionally filtered; P0 clusters always sort to the top."""
+    query = session.query(Cluster)
+    if routing is not None:
+        query = query.filter(Cluster.routing_suggestion == routing)
+    if severity is not None:
+        query = query.filter(Cluster.dominant_severity == severity)
+    clusters = query.order_by(Cluster.size.desc()).all()
+    cards = [
+        ClusterCard(
+            cluster_id=c.id,
+            label=c.label,
+            description=c.description,
+            routing=c.routing_suggestion,
+            severity=c.dominant_severity,
+            size=c.size,
+            is_p0=c.dominant_severity == "P0",
+        )
+        for c in clusters
+    ]
+    return sorted(cards, key=lambda c: (not c.is_p0, -c.size))
+
+
+@dataclass(frozen=True)
 class CallDetailData:
     """Everything the Call Detail page renders for one call."""
 
