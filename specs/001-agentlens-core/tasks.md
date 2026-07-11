@@ -51,9 +51,9 @@ Status legend: ☐ not started · ◐ in progress · ☑ done
 
 | Status | ID | Task | AC |
 |---|---|---|---|
-| ☐ | T401 | Review model + review queue backend | AC-4.1 |
-| ☐ | T402 | Judge↔human agreement stats (per dimension, live) | AC-4.2 |
-| ☐ | T403 | Judge version comparison on golden set (regression gate) | AC-4.3 |
+| ☑ | T401 | Review model + review queue backend | AC-4.1 |
+| ☑ | T402 | Judge↔human agreement stats (per dimension, live) | AC-4.2 |
+| ☑ | T403 | Judge version comparison on golden set (regression gate; `run_evals --scope golden` + `compare_judge` job, exit 1 on >2-point drop) | AC-4.3 |
 
 ## Phase 5 — Fix Loop (US-5)
 

@@ -149,6 +149,12 @@ by user decision (2026-07-10). Actual spend: 2.0¢ total (both labeling runs).
 
 **Exit gate:** AC-4.1–4.3 verified with seeded reviews in tests; comparison runs golden-set-only (~$0.15/run, user-approved).
 
+**Exit result (2026-07-10):** All three ACs verified with seeded reviews in tests
+(100 fast tests passing). Zero spend — no LLM calls in this phase. A real candidate
+judge (v1.1) comparison run remains available via
+`run_evals --scope golden` + `compare_judge --baseline 1.0 --candidate 1.1`
+(~$0.15, needs approval) whenever a judge revision lands.
+
 ## Phase 5 — Fix Loop: Propose & Validate (US-5)
 
 **Goal:** Close the loop — proposed fix per cluster, regression re-run, before/after delta.
