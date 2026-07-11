@@ -83,8 +83,8 @@ Build order per approved UI design; each task leaves the app working with no dea
 
 | Status | ID | Task | AC |
 |---|---|---|---|
-| ☐ | T701 | Success-metrics verification script/run | Spec §2 |
-| ☐ | T702 | README + docs current | — |
+| ☑ | T701 | Success-metrics verification script/run (`verify_metrics`: 4 PASS, 2 ACCEPTED, exit 0) | Spec §2 |
+| ☑ | T702 | README + docs current | — |
 
 ## AC Traceability
 

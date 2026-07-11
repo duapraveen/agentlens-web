@@ -220,6 +220,14 @@ on click. Manual `streamlit run` walkthrough left to the user.
 
 **Exit gate:** All spec §2 success metrics demonstrably met or deviations documented; fast suite, ruff, mypy clean.
 
+**Exit result (2026-07-10):** `verify_metrics` against the real corpus: judge precision
+0.87 PASS · recall 0.72 ACCEPTED (Phase 2 decision) · cluster purity 5/6 at 1.00,
+hallucinated_availability 0.67 ACCEPTED (Phase 3 decision) · agreement stats live
+(0 human reviews submitted yet) PASS · closed-loop demo (fix #1 validated with
+regression run #1) PASS · cost/call 0.35¢ PASS. Exit code 0. README written;
+`.env.example` and ADRs 001–003 current. 142 fast tests, ruff/mypy clean.
+Total prototype LLM spend ≈ $0.95. **Spec 001 complete.**
+
 ---
 
 ## 4. Cross-Cutting Rules (apply to every phase)
