@@ -12,7 +12,7 @@ from agentlens.jobs.run_evals import main
 from agentlens.models import Base, Call, EvalRecord, JobRun
 
 
-def _seed_calls(url: str, n: int = 3, pre_evaluated: int = 0) -> None:
+def _seed_calls(url: str, n: int = 3, pre_evaluated: int = 0, n_golden: int = 0) -> None:
     engine = create_engine(url)
     Base.metadata.create_all(engine)
     with Session(engine) as session:
@@ -23,6 +23,7 @@ def _seed_calls(url: str, n: int = 3, pre_evaluated: int = 0) -> None:
                     scenario="symptom_triage",
                     transcript=[{"speaker": "agent", "text": "hi"}],
                     batch_id="b1",
+                    is_golden=i < n_golden,
                 )
             )
         for i in range(pre_evaluated):
@@ -83,6 +84,20 @@ def test_full_scope_visits_every_call_and_records_jobrun(job_env: str) -> None:
         assert run.summary["skipped"] == 1
         assert run.summary["failed"] == 1
         assert run.summary["cost_cents"] >= 0.0
+
+
+def test_golden_scope_visits_only_golden_calls(job_env: str) -> None:
+    _seed_calls(job_env, n=4, n_golden=2)
+    visited: list[str] = []
+
+    def record_id(_session: object, call: Call, **_kwargs: object) -> str:
+        visited.append(call.id)
+        return "created"
+
+    with patch("agentlens.jobs.run_evals.evaluate_call", side_effect=record_id):
+        exit_code = main(["--scope", "golden"])
+    assert exit_code == 0
+    assert set(visited) == {"call_000", "call_001"}
 
 
 def test_estimate_is_logged_before_run(job_env: str, tmp_path: Path) -> None:

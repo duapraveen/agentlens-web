@@ -1,6 +1,6 @@
 """Batch job: evaluate calls with deterministic checks + the LLM judge (US-1).
 
-Usage: python -m agentlens.jobs.run_evals [--scope full|unevaluated] [--model NAME]
+Usage: python -m agentlens.jobs.run_evals [--scope full|unevaluated|golden] [--model NAME]
 """
 
 import argparse
@@ -24,7 +24,7 @@ _EST_OUTPUT_TOKENS = 500
 def main(argv: list[str] | None = None) -> int:
     """Run the eval job; returns a process exit code."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--scope", choices=["full", "unevaluated"], default="unevaluated")
+    parser.add_argument("--scope", choices=["full", "unevaluated", "golden"], default="unevaluated")
     parser.add_argument("--model", default=None)
     args = parser.parse_args(argv)
 
@@ -40,6 +40,8 @@ def main(argv: list[str] | None = None) -> int:
                 EvalRecord.prompt_version == PROMPT_VERSION,
             )
             calls = session.query(Call).filter(~Call.id.in_(evaluated_ids)).all()
+        elif args.scope == "golden":
+            calls = session.query(Call).filter(Call.is_golden).all()
         else:
             calls = session.query(Call).all()
 
