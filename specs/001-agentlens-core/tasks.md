@@ -42,10 +42,10 @@ Status legend: ☐ not started · ◐ in progress · ☑ done
 
 | Status | ID | Task | AC |
 |---|---|---|---|
-| ☐ | T301 | Embeddings backend decision + ADR-002 + embed module | AC-2.1 |
-| ☐ | T302 | Clustering algorithm + tables + recluster job (resolves OQ-2) | AC-2.1 |
-| ☐ | T303 | LLM cluster labeling + routing suggestion | AC-2.1, AC-2.2 |
-| ☐ | T304 | Cluster purity check (≥90% dominant-cluster) | AC-2.3 |
+| ☑ | T301 | Embeddings backend decision + ADR-002 + embed module (escalated: TF-IDF → sentence-transformers per ADR-002 amendment) | AC-2.1 |
+| ☑ | T302 | Clustering algorithm + tables + recluster job (resolves OQ-2: KMeans; HDBSCAN rejected empirically) | AC-2.1 |
+| ☑ | T303 | LLM cluster labeling + routing suggestion | AC-2.1, AC-2.2 |
+| ☑ | T304 | Cluster purity check (≥90% dominant-cluster) — result 5/6 modes at 1.00; hallucinated_availability 0.67, deviation pending user acceptance (see plan.md Phase 3 exit result) | AC-2.3 |
 
 ## Phase 4 — Feedback & Calibration (US-4)
 

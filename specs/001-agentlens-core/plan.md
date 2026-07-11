@@ -128,6 +128,15 @@ positives, free fix).
 
 **Exit gate:** AC-2.1–2.3 verified. Est. spend: cluster labeling only (~14 clusters × 1 haiku call ≈ cents); embeddings free if local.
 
+**Exit result (2026-07-10):** TF-IDF failed the purity gate (best 4/6 modes at any k;
+silhouette ~0.01–0.03) — escalated per ADR-002 to sentence-transformers
+(`all-MiniLM-L6-v2`) with judge dimension+stage prefixed into the embedding text;
+HDBSCAN evaluated and rejected (OQ-2 closed: KMeans). Final run: 4 labeled clusters
+over 73 failed records, purity 1.00 for 5/6 modes; `hallucinated_availability` 0.67 —
+one golden call's judge description discusses network status, not availability
+(downstream of the accepted Phase 2 recall gap on that mode, 0.33). Deviation pending
+user acceptance. Actual spend: 2.0¢ total (both labeling runs).
+
 ## Phase 4 — Human Feedback & Calibration (US-4)
 
 **Goal:** Review queue backend and judge↔human agreement stats (UI arrives in Phase 6).
