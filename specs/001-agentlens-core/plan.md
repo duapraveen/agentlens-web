@@ -199,6 +199,16 @@ that doc — each step leaves a working app with no dead links.
 page-access matrix; demo walkthrough of the full loop (Jobs → Conversations → Call
 Detail → Clusters → Fix Workbench; Reviewer flow via Review Queue).
 
+**Exit result (2026-07-10):** All 7 pages + shell built per the UI design (ADR-003
+adds streamlit). Role matrix enforced via `st.navigation(position="hidden")` +
+role-filtered `st.page_link`; Call Detail routable but not a nav item. 16 headless
+AppTest tests + query-layer unit tests (140 fast tests total); every page also
+boots clean against the real corpus DB (61 calls, 4 clusters, validated fix #1).
+Known deviation: the Conversations "Cost" column is the global average judge cost
+per evaluated call, not true per-call cost — llm_call_log has no call lineage.
+Zero build spend; UI-triggered runs (evals, fix generation, regression) spend only
+on click. Manual `streamlit run` walkthrough left to the user.
+
 ## Phase 7 — End-to-End Validation & Wrap-up
 
 **Goal:** Prove the spec's success metrics on the real corpus and leave the repo demo-ready.

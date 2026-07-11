@@ -70,14 +70,14 @@ Build order per approved UI design; each task leaves the app working with no dea
 
 | Status | ID | Task | AC |
 |---|---|---|---|
-| ☐ | T601 | App shell (roles, nav, status block) + ADR-003 (streamlit) | UI design §App Shell |
-| ☐ | T602 | Jobs page | UI design §1 |
-| ☐ | T603 | Conversations page | UI design §2 |
-| ☐ | T604 | Call Detail page | AC-3.1, AC-3.2 |
-| ☐ | T605 | Clusters page | AC-2.3 (links); UI design §4 |
-| ☐ | T606 | Review Queue page | AC-4.1 |
-| ☐ | T607 | Overview page | AC-6.1, AC-6.2 |
-| ☐ | T608 | Fix Workbench page | AC-5.1–5.4 (UI) |
+| ☑ | T601 | App shell (roles, nav, status block) + ADR-003 (streamlit) | UI design §App Shell |
+| ☑ | T602 | Jobs page | UI design §1 |
+| ☑ | T603 | Conversations page | UI design §2 |
+| ☑ | T604 | Call Detail page | AC-3.1, AC-3.2 |
+| ☑ | T605 | Clusters page | AC-2.3 (links); UI design §4 |
+| ☑ | T606 | Review Queue page | AC-4.1 |
+| ☑ | T607 | Overview page | AC-6.1, AC-6.2 |
+| ☑ | T608 | Fix Workbench page | AC-5.1–5.4 (UI) |
 
 ## Phase 7 — Validation & Wrap-up
 
