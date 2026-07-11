@@ -84,6 +84,26 @@ class EvalRecord(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
     call: Mapped[Call] = relationship(back_populates="eval_records")
+    review: Mapped["Review | None"] = relationship(back_populates="eval_record")
+
+
+class Review(Base):
+    """One human verdict on one judge finding (AC-4.1).
+
+    At most one review per finding (unique eval_record_id); the reviewer's
+    latest verdict wins — resubmission updates the row in place.
+    """
+
+    __tablename__ = "reviews"
+    __table_args__ = (UniqueConstraint("eval_record_id"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    eval_record_id: Mapped[int] = mapped_column(ForeignKey("eval_records.id"))
+    verdict: Mapped[str] = mapped_column(String(8))
+    note: Mapped[str | None] = mapped_column(Text, default=None)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+    eval_record: Mapped[EvalRecord] = relationship(back_populates="review")
 
 
 class DeterministicCheckResult(Base):
