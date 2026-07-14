@@ -22,7 +22,7 @@
   padding: 2px 10px;
   font-size: 12px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-on-severity);
 }
 
 .badge-p0 { background: var(--severity-p0); }
