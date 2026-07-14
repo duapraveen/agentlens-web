@@ -23,7 +23,9 @@ export function FixWorkbench() {
   });
 
   useEffect(() => {
-    if (clusterId == null && selectable && selectable.length > 0) {
+    if (!selectable || selectable.length === 0) return;
+    const isValid = clusterId != null && selectable.some((c) => c.id === clusterId);
+    if (!isValid) {
       setClusterId(selectable[0].id);
     }
   }, [selectable, clusterId]);
