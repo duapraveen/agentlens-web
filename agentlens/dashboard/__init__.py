@@ -1,1 +1,1 @@
-"""Streamlit dashboard (US-3, US-6). Layout in pages/, queries in data.py."""
+"""Dashboard query layer (US-3, US-6). Pure ORM queries in data.py, consumed by agentlens/api/."""

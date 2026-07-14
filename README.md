@@ -23,8 +23,14 @@ uv run python -m agentlens.jobs.run_evals        # judge + deterministic checks 
 uv run python -m agentlens.jobs.judge_metrics    # store the judge quality baseline (free)
 uv run python -m agentlens.jobs.recluster        # embed + cluster failures (~1¢ labeling)
 
-uv run streamlit run agentlens/dashboard/app.py  # the UI (all jobs also triggerable here)
 uv run python -m agentlens.jobs.verify_metrics   # check spec §2 success metrics (free)
+```
+
+Run the UI (two terminals):
+
+```bash
+uv run uvicorn agentlens.api.main:app --reload --port 8000   # backend API
+cd frontend && npm install && npm run dev                    # frontend, http://localhost:5173
 ```
 
 Development:
@@ -45,7 +51,9 @@ uv run mypy agentlens/
 | `agentlens/clustering/` | Sentence-transformer embeddings → silhouette-tuned KMeans → LLM-labeled clusters |
 | `agentlens/feedback/` | Review queue, judge↔human agreement, judge-version regression gate |
 | `agentlens/fixes/` | Fix proposal per cluster, scenario regeneration, before/after regression report |
-| `agentlens/dashboard/` | Streamlit UI: 7 pages, 3 roles (Engineer / Reviewer / Lead) |
+| `agentlens/dashboard/data.py` | Pure ORM query layer backing the API (no UI framework imports) |
+| `agentlens/api/` | FastAPI backend: one router per page, calling `dashboard/data.py` and the modules above |
+| `frontend/` | React + TypeScript UI: 7 pages, 3 roles (Engineer / Reviewer / Lead) |
 | `agentlens/llm/gateway.py` | **Single entry point for all LLM calls** — cost accounting, prompt versioning, failure recording |
 | `agentlens/privacy/redact.py` | All outbound transcript text passes through PHI redaction |
 | `agentlens/jobs/` | CLI batch entrypoints (all side effects live here) |
@@ -53,7 +61,7 @@ uv run mypy agentlens/
 
 Data: `data/golden/` is the frozen labeled golden set (append-only);
 `data/agentlens.db` is the working SQLite DB (SQLAlchemy 2.0 ORM, Postgres-portable).
-Decisions with tradeoffs live in `docs/adr/` (stack, embeddings escalation, streamlit).
+Decisions with tradeoffs live in `docs/adr/` (stack, embeddings escalation, Streamlit→FastAPI+React migration).
 
 ## Prototype results (2026-07-10, verified by `verify_metrics`)
 
