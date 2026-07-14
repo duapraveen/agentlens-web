@@ -36,6 +36,10 @@ def test_launch_corpus_starts_subprocess(
     mock_popen.assert_called_once()
     args = mock_popen.call_args[0][0]
     assert "agentlens.jobs.generate_corpus" in args
+    assert "--count" in args
+    assert "10" in args
+    assert "--failure-rate" in args
+    assert "0.3" in args
 
 
 def test_launch_evals_starts_subprocess(
@@ -49,6 +53,12 @@ def test_launch_evals_starts_subprocess(
     )
     assert response.status_code == 202
     mock_popen.assert_called_once()
+    args = mock_popen.call_args[0][0]
+    assert "agentlens.jobs.run_evals" in args
+    assert "--scope" in args
+    assert "unevaluated" in args
+    assert "--model" in args
+    assert "claude-haiku-4-5" in args
 
 
 def test_launch_recluster_starts_subprocess(
@@ -60,3 +70,5 @@ def test_launch_recluster_starts_subprocess(
     response = client.post("/api/jobs/recluster")
     assert response.status_code == 202
     mock_popen.assert_called_once()
+    args = mock_popen.call_args[0][0]
+    assert "agentlens.jobs.recluster" in args
