@@ -99,7 +99,16 @@ export function FixWorkbench() {
                   <strong>Type:</strong> {workbench.fix.fix_type} · <strong>Status:</strong> {workbench.fix.status}
                 </p>
                 <p className="text-dense">{workbench.fix.rationale}</p>
-                <pre className="text-dense" style={{ background: "var(--color-panel-tint)", padding: 12 }}>
+                <pre
+                  className="text-dense"
+                  style={{
+                    background: "var(--color-panel-tint)",
+                    padding: 12,
+                    whiteSpace: "pre-wrap",
+                    wordBreak: "break-word",
+                    overflowX: "auto",
+                  }}
+                >
                   {workbench.fix.patch}
                 </pre>
                 <button
