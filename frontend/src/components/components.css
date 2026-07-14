@@ -1,0 +1,139 @@
+/* frontend/src/components/components.css */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+}
+
+.card--clickable {
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card--clickable:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.badge-p0 { background: var(--severity-p0); }
+.badge-p1 { background: var(--severity-p1); }
+.badge-p2 { background: var(--severity-p2); }
+
+.dimension-dots {
+  font-family: var(--font-family);
+  letter-spacing: 2px;
+}
+
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.stat-tile__value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.stat-tile__label {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-panel-tint) 37%, var(--color-border) 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease infinite;
+  border-radius: 6px;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+.al-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.al-table th {
+  text-align: left;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-2);
+}
+
+.al-table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.al-table tr[data-clickable="true"]:hover {
+  background: var(--color-panel-tint);
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: var(--space-2) 0;
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tabs button[data-active="true"] {
+  color: var(--color-text);
+  font-weight: 700;
+  border-bottom-color: var(--color-primary);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+  min-width: 360px;
+  max-width: 90vw;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
