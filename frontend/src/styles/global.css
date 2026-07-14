@@ -10,6 +10,7 @@ body {
   font-size: var(--font-size-body);
   color: var(--color-text);
   background: var(--color-surface);
+  overflow-wrap: anywhere;
 }
 
 h1, h2, h3 {

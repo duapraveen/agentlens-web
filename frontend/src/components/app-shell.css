@@ -40,4 +40,6 @@
 
 .content {
   padding: var(--space-5);
+  min-width: 0;
+  overflow-x: auto;
 }

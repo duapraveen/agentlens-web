@@ -19,29 +19,31 @@ export function Table<Row>({
   onRowClick?: (row: Row) => void;
 }) {
   return (
-    <table className="al-table">
-      <thead>
-        <tr>
-          {columns.map((col) => (
-            <th key={col.key}>{col.header}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row) => (
-          <tr
-            key={rowKey(row)}
-            data-clickable={Boolean(onRowClick)}
-            onClick={() => onRowClick?.(row)}
-          >
+    <div style={{ overflowX: "auto" }}>
+      <table className="al-table">
+        <thead>
+          <tr>
             {columns.map((col) => (
-              <td key={col.key} className={col.numeric ? "numeric" : undefined}>
-                {col.render(row)}
-              </td>
+              <th key={col.key}>{col.header}</th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr
+              key={rowKey(row)}
+              data-clickable={Boolean(onRowClick)}
+              onClick={() => onRowClick?.(row)}
+            >
+              {columns.map((col) => (
+                <td key={col.key} className={col.numeric ? "numeric" : undefined}>
+                  {col.render(row)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }

@@ -18,7 +18,8 @@ uv run pytest -m "not llm"                      # fast tests (run freely)
 uv run pytest -m llm                            # LLM tests (cost money — ask first)
 uv run ruff check --fix . && uv run ruff format .  # lint + format
 uv run mypy agentlens/                          # type-check
-uv run streamlit run agentlens/dashboard/app.py # dashboard
+uv run uvicorn agentlens.api.main:app --reload --port 8000  # backend API
+cd frontend && npm run dev                      # frontend dev server (http://localhost:5173)
 python -m agentlens.jobs.<name>                 # run a batch job
 ```
 
@@ -33,7 +34,8 @@ Monorepo Python package `agentlens/` with these modules:
 | `clustering/` | Embed failure descriptions and cluster into labeled patterns |
 | `feedback/` | Human review queue; computes judge↔human agreement and calibration stats |
 | `fixes/` | Propose fixes for clusters, regenerate affected scenarios, run before/after regression |
-| `dashboard/` | Streamlit UI; all user-facing views |
+| `dashboard/data.py` | Pure ORM query layer backing the API (no UI framework imports) |
+| `api/` | FastAPI backend; one router per page, calling `dashboard/data.py` and the modules above |
 | `llm/gateway.py` | **Single entry point for all LLM calls** — retries, cost accounting, prompt-version tagging |
 | `privacy/redact.py` | All transcript text bound for external APIs passes through here |
 | `jobs/` | CLI-invoked batch entrypoints (side effects live here, not in core modules) |

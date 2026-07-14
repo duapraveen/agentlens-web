@@ -24,6 +24,7 @@ export function Jobs() {
   const [scope, setScope] = useState<"unevaluated" | "full">("unevaluated");
   const [model, setModel] = useState("claude-haiku-4-5");
   const [message, setMessage] = useState<string | null>(null);
+  const [messageIsError, setMessageIsError] = useState(false);
 
   const { data: status, isLoading } = useQuery({ queryKey: ["jobs-status"], queryFn: fetchJobsStatus });
   const { data: estimate } = useQuery({
@@ -34,24 +35,39 @@ export function Jobs() {
   const corpusMutation = useMutation({
     mutationFn: () => launchCorpusJob(count, failureRate / 100),
     onSuccess: () => {
+      setMessageIsError(false);
       setMessage("Started generate_corpus — follow progress in the job log below.");
       queryClient.invalidateQueries({ queryKey: ["jobs-status"] });
+    },
+    onError: (e: Error) => {
+      setMessageIsError(true);
+      setMessage(e.message);
     },
   });
 
   const evalsMutation = useMutation({
     mutationFn: () => launchEvalsJob(scope, model),
     onSuccess: () => {
+      setMessageIsError(false);
       setMessage("Started run_evals — follow progress in the job log below.");
       queryClient.invalidateQueries({ queryKey: ["jobs-status"] });
+    },
+    onError: (e: Error) => {
+      setMessageIsError(true);
+      setMessage(e.message);
     },
   });
 
   const reclusterMutation = useMutation({
     mutationFn: () => launchReclusterJob(),
     onSuccess: () => {
+      setMessageIsError(false);
       setMessage("Started recluster — follow progress in the job log below.");
       queryClient.invalidateQueries({ queryKey: ["jobs-status"] });
+    },
+    onError: (e: Error) => {
+      setMessageIsError(true);
+      setMessage(e.message);
     },
   });
 
@@ -66,7 +82,11 @@ export function Jobs() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <h2>Jobs</h2>
-      {message && <p className="text-dense">{message}</p>}
+      {message && (
+        <p className="text-dense" style={messageIsError ? { color: "var(--severity-p0)" } : undefined}>
+          {message}
+        </p>
+      )}
 
       <Card>
         <h3>Corpus Generation</h3>

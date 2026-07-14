@@ -10,6 +10,7 @@ export function ReviewQueue() {
   const [verdict, setVerdict] = useState<"agree" | "disagree" | null>(null);
   const [note, setNote] = useState("");
   const [showTranscript, setShowTranscript] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const { data, isLoading } = useQuery({ queryKey: ["review-queue"], queryFn: fetchReviewQueue });
 
@@ -17,11 +18,13 @@ export function ReviewQueue() {
     mutationFn: (vars: { id: number; verdict: "agree" | "disagree"; note?: string }) =>
       submitReview(vars.id, vars.verdict, vars.note),
     onSuccess: (result) => {
+      setError(null);
       queryClient.setQueryData(["review-queue"], result);
       setVerdict(null);
       setNote("");
       setShowTranscript(false);
     },
+    onError: (e: Error) => setError(e.message),
   });
 
   if (isLoading || !data) {
@@ -119,6 +122,7 @@ export function ReviewQueue() {
             >
               Submit & Next
             </button>
+            {error && <p style={{ color: "var(--severity-p0)" }}>{error}</p>}
           </Card>
         </>
       )}
