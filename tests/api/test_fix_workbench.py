@@ -8,12 +8,22 @@ from agentlens.models import Cluster
 
 def test_list_selectable_clusters_excludes_p0(client: TestClient, db_session: Session) -> None:
     db_session.add(
-        Cluster(label="P0 cluster", description="", routing_suggestion="prompt_fix",
-                 dominant_severity="P0", size=1)
+        Cluster(
+            label="P0 cluster",
+            description="",
+            routing_suggestion="prompt_fix",
+            dominant_severity="P0",
+            size=1,
+        )
     )
     db_session.add(
-        Cluster(label="P1 cluster", description="", routing_suggestion="prompt_fix",
-                 dominant_severity="P1", size=2)
+        Cluster(
+            label="P1 cluster",
+            description="",
+            routing_suggestion="prompt_fix",
+            dominant_severity="P1",
+            size=2,
+        )
     )
     db_session.commit()
 
@@ -29,8 +39,11 @@ def test_get_fix_workbench_not_found(client: TestClient) -> None:
 
 def test_get_fix_workbench_no_fix_yet(client: TestClient, db_session: Session) -> None:
     cluster = Cluster(
-        label="P1 cluster", description="d", routing_suggestion="prompt_fix",
-        dominant_severity="P1", size=2,
+        label="P1 cluster",
+        description="d",
+        routing_suggestion="prompt_fix",
+        dominant_severity="P1",
+        size=2,
     )
     db_session.add(cluster)
     db_session.commit()
@@ -44,8 +57,11 @@ def test_get_fix_workbench_no_fix_yet(client: TestClient, db_session: Session) -
 
 def test_apply_regression_blocked_on_p0_cluster(client: TestClient, db_session: Session) -> None:
     cluster = Cluster(
-        label="P0 cluster", description="", routing_suggestion="prompt_fix",
-        dominant_severity="P0", size=1,
+        label="P0 cluster",
+        description="",
+        routing_suggestion="prompt_fix",
+        dominant_severity="P0",
+        size=1,
     )
     db_session.add(cluster)
     db_session.commit()
@@ -56,8 +72,11 @@ def test_apply_regression_blocked_on_p0_cluster(client: TestClient, db_session: 
 
 def test_apply_regression_requires_a_fix(client: TestClient, db_session: Session) -> None:
     cluster = Cluster(
-        label="P1 cluster", description="", routing_suggestion="prompt_fix",
-        dominant_severity="P1", size=1,
+        label="P1 cluster",
+        description="",
+        routing_suggestion="prompt_fix",
+        dominant_severity="P1",
+        size=1,
     )
     db_session.add(cluster)
     db_session.commit()

@@ -44,7 +44,9 @@ def jobs_status(session: Session = Depends(get_db)) -> JobsStatusOut:  # noqa: B
 
 @router.get("/jobs/eval-estimate", response_model=EvalEstimateOut)
 def eval_estimate(
-    scope: Literal["full", "unevaluated"], model: str, session: Session = Depends(get_db)  # noqa: B008
+    scope: Literal["full", "unevaluated"],
+    model: str,
+    session: Session = Depends(get_db),  # noqa: B008
 ) -> EvalEstimateOut:
     n = n_calls_for_scope(session, scope, model)
     return EvalEstimateOut(n_calls=n, estimate_cents=n * cost_cents(model, *_JUDGE_EST_TOKENS))

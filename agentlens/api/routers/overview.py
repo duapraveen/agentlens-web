@@ -32,14 +32,16 @@ def get_overview(session: Session = Depends(get_db)) -> OverviewOut:  # noqa: B0
     top = cluster_cards(session)[:5]
     costs = cost_totals(session)
     summary = metrics_run.summary if metrics_run else {}
-    return OverviewOut.model_validate({
-        "quality": quality,
-        "severities": severities,
-        "precision": summary.get("precision"),
-        "recall": summary.get("recall"),
-        "agreement": agreement.agreement if agreement.n_reviews else None,
-        "n_reviews": agreement.n_reviews,
-        "top_clusters": top,
-        "total_eval_cents": costs.total_eval_cents,
-        "avg_per_call_cents": costs.avg_per_call_cents,
-    })
+    return OverviewOut.model_validate(
+        {
+            "quality": quality,
+            "severities": severities,
+            "precision": summary.get("precision"),
+            "recall": summary.get("recall"),
+            "agreement": agreement.agreement if agreement.n_reviews else None,
+            "n_reviews": agreement.n_reviews,
+            "top_clusters": top,
+            "total_eval_cents": costs.total_eval_cents,
+            "avg_per_call_cents": costs.avg_per_call_cents,
+        }
+    )

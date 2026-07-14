@@ -39,7 +39,8 @@ def _get_cluster(session: Session, cluster_id: int) -> Cluster:
 
 @router.get("/fix-workbench/{cluster_id}", response_model=FixWorkbenchOut)
 def get_fix_workbench(
-    cluster_id: int, session: Session = Depends(get_db)  # noqa: B008
+    cluster_id: int,
+    session: Session = Depends(get_db),  # noqa: B008
 ) -> FixWorkbenchOut:
     _get_cluster(session, cluster_id)
     fix = latest_fix(session, cluster_id)
@@ -54,7 +55,8 @@ def get_fix_workbench(
 
 @router.post("/fix-workbench/{cluster_id}/generate", response_model=FixProposalOut)
 def generate_fix(
-    cluster_id: int, session: Session = Depends(get_db)  # noqa: B008
+    cluster_id: int,
+    session: Session = Depends(get_db),  # noqa: B008
 ) -> FixProposalOut:
     cluster = _get_cluster(session, cluster_id)
     result = propose_fix(session, cluster)
@@ -73,7 +75,8 @@ def generate_fix(
 
 @router.post("/fix-workbench/{cluster_id}/apply-regression", response_model=RegressionRunOut)
 def apply_regression(
-    cluster_id: int, session: Session = Depends(get_db)  # noqa: B008
+    cluster_id: int,
+    session: Session = Depends(get_db),  # noqa: B008
 ) -> RegressionRunOut:
     cluster = _get_cluster(session, cluster_id)
     if cluster.dominant_severity == "P0":
