@@ -1,9 +1,13 @@
 /* frontend/src/components/components.css */
 .card {
-  background: var(--color-surface);
+  background: var(--color-panel-tint);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
   padding: var(--space-4);
+}
+
+.card--strong {
+  background: var(--color-panel-tint-strong);
 }
 
 .card--clickable {
@@ -14,6 +18,15 @@
 .card--clickable:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transform: translateY(-1px);
+}
+
+.severity-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 
 .badge {
@@ -28,10 +41,45 @@
 .badge-p0 { background: var(--severity-p0); }
 .badge-p1 { background: var(--severity-p1); }
 .badge-p2 { background: var(--severity-p2); }
+.badge-none { background: var(--severity-none); }
 
 .dimension-dots {
   font-family: var(--font-family);
   letter-spacing: 2px;
+}
+
+.dimension-dots-wrap {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+.dimension-tooltip {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-2) var(--space-3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  font-size: 12px;
+  text-align: left;
+}
+
+.dimension-dots-wrap:hover .dimension-tooltip {
+  display: block;
+}
+
+.dimension-tooltip__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 2px 0;
 }
 
 .stat-tile {

@@ -4,6 +4,7 @@ import { fetchReviewQueue, submitReview } from "../api/client";
 import { Card } from "../components/Card";
 import { StatTile } from "../components/StatTile";
 import { Skeleton } from "../components/Skeleton";
+import { SeverityDot } from "../components/SeverityDot";
 
 export function ReviewQueue() {
   const queryClient = useQueryClient();
@@ -62,11 +63,12 @@ export function ReviewQueue() {
         </Card>
       ) : (
         <>
-          <Card>
+          <Card tint="strong" severity={current.severity}>
             <h3>
               {current.call_id} · {current.scenario}
             </h3>
             <p>
+              <SeverityDot severity={current.severity} />
               <strong>{current.dimension}</strong> · score {current.score} · {current.severity}
             </p>
             <p className="text-dense">{current.failure_description ?? "(no description)"}</p>

@@ -2,7 +2,10 @@
   --color-primary: #0f7864;
   --color-primary-dark: #0b5c4c;
   --color-accent-gradient: linear-gradient(90deg, #8fe388, #2fbfa0);
-  --color-panel-tint: #f2f9f6;
+  --color-panel-tint: #eaf6ee;
+  --color-panel-tint-strong: #d7f0e1;
+  --color-button-tint: #bfe6cc;
+  --color-button-tint-hover: #a9dcba;
   --color-surface: #ffffff;
   --color-border: #e4e4e0;
   --color-text: #1a1d1b;
@@ -10,7 +13,8 @@
 
   --severity-p0: #d64545;
   --severity-p1: #c98a1f;
-  --severity-p2: #6b7280;
+  --severity-p2: #3568d4;
+  --severity-none: #9aa0a6;
   --color-on-accent: #ffffff;
 
   --tag-mint-bg: #e3f5ef;
@@ -39,6 +43,9 @@
   :root {
     --color-surface: #1c1f1e;
     --color-panel-tint: #16211d;
+    --color-panel-tint-strong: #1b2a22;
+    --color-button-tint: #234a37;
+    --color-button-tint-hover: #2c5a43;
     --color-border: #2c302e;
     --color-text: #f2f4f3;
     --color-text-secondary: #a1a7a4;

@@ -5,7 +5,9 @@ import { fetchConversationDetail } from "../api/client";
 import { Card } from "../components/Card";
 import { Skeleton } from "../components/Skeleton";
 import { SeverityBadge } from "../components/SeverityBadge";
+import { SeverityDot } from "../components/SeverityDot";
 import { useRole } from "../context/RoleContext";
+import { severityColorVar, severityRank } from "../severity";
 
 export function CallDetail() {
   const { callId } = useParams<{ callId: string }>();
@@ -60,9 +62,19 @@ export function CallDetail() {
       </Card>
 
       <h3>Scores</h3>
-      {data.records.map((record) => (
-        <details key={record.id} style={{ marginBottom: 8 }}>
+      {[...data.records]
+        .sort((a, b) => severityRank(a.severity) - severityRank(b.severity))
+        .map((record) => (
+        <details
+          key={record.id}
+          style={{
+            marginBottom: 8,
+            borderLeft: `4px solid ${record.passed ? "transparent" : severityColorVar(record.severity)}`,
+            paddingLeft: 8,
+          }}
+        >
           <summary>
+            {!record.passed && <SeverityDot severity={record.severity} />}
             {record.dimension} · {record.score} · <SeverityBadge severity={record.severity} /> ·{" "}
             {record.passed ? "pass" : "FAIL"} · stage: {record.pipeline_stage ?? "—"}
           </summary>

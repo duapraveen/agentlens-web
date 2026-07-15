@@ -28,6 +28,12 @@ from agentlens.models import (
 from agentlens.prompts.judge import PROMPT_VERSION
 
 _DIMENSION_ORDER = [d.value for d in Dimension]
+_SEVERITY_ORDER = ["P0", "P1", "P2"]
+
+
+def _severity_rank(severity: str) -> int:
+    """Sort rank for a severity string: P0=0, P1=1, P2=2, anything else last."""
+    return _SEVERITY_ORDER.index(severity) if severity in _SEVERITY_ORDER else len(_SEVERITY_ORDER)
 
 
 @dataclass(frozen=True)
@@ -159,7 +165,7 @@ class ClusterCard:
 def cluster_cards(
     session: Session, routing: str | None = None, severity: str | None = None
 ) -> list[ClusterCard]:
-    """Cluster cards, optionally filtered; P0 clusters always sort to the top."""
+    """Cluster cards, optionally filtered; sorted P0 > P1 > P2, then by size descending."""
     query = session.query(Cluster)
     if routing is not None:
         query = query.filter(Cluster.routing_suggestion == routing)
@@ -178,7 +184,7 @@ def cluster_cards(
         )
         for c in clusters
     ]
-    return sorted(cards, key=lambda c: (not c.is_p0, -c.size))
+    return sorted(cards, key=lambda c: (_severity_rank(c.severity), -c.size))
 
 
 @dataclass(frozen=True)

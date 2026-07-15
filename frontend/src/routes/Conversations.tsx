@@ -41,7 +41,11 @@ export function Conversations() {
       header: "Fails",
       render: (r) => <DimensionDots order={DIMENSION_ORDER} failed={r.failed_dimensions} />,
     },
-    { key: "p0", header: "P0", render: (r) => (r.has_p0 ? "⚠" : "") },
+    {
+      key: "p0",
+      header: "P0",
+      render: (r) => (r.has_p0 ? <span style={{ color: "var(--severity-p0)" }}>⚠</span> : ""),
+    },
     { key: "score", header: "Avg Score", render: (r) => r.avg_score.toFixed(1), numeric: true },
     { key: "cost", header: "Cost (est ¢)", render: (r) => r.est_cost_cents.toFixed(2), numeric: true },
     { key: "date", header: "Date", render: (r) => new Date(r.created_at).toLocaleString() },
