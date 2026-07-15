@@ -55,12 +55,6 @@
 }
 
 .dimension-tooltip {
-  display: none;
-  position: absolute;
-  z-index: 10;
-  top: 100%;
-  left: 0;
-  margin-top: 4px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
@@ -71,8 +65,9 @@
   text-align: left;
 }
 
-.dimension-dots-wrap:hover .dimension-tooltip {
-  display: block;
+.dimension-tooltip--portal {
+  position: fixed;
+  z-index: 1000;
 }
 
 .dimension-tooltip__row {
