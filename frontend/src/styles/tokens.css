@@ -17,6 +17,11 @@
   --severity-none: #9aa0a6;
   --color-on-accent: #ffffff;
 
+  /* Failure-trend chart's "Overall" series — validated for CVD separation
+     against --severity-p0/p1/p2 via dataviz's validate_palette.js. */
+  --chart-overall: #0d9488;
+  --chart-grid: #e8e8e5;
+
   --tag-mint-bg: #e3f5ef;
   --tag-mint-border: #a9dcc9;
   --tag-amber-bg: #faf1e0;

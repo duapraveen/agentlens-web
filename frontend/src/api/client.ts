@@ -91,6 +91,15 @@ export interface DimensionQuality {
   delta: number | null;
 }
 
+export interface FailureTrendPoint {
+  date: string;
+  overall_rate: number;
+  p0_rate: number;
+  p1_rate: number;
+  p2_rate: number;
+  total_records: number;
+}
+
 export interface Overview {
   quality: Record<string, DimensionQuality>;
   severities: Record<string, number>;
@@ -101,6 +110,7 @@ export interface Overview {
   top_clusters: ClusterCard[];
   total_eval_cents: number;
   avg_per_call_cents: number;
+  failure_trend: FailureTrendPoint[];
 }
 
 export interface AgreementStats {

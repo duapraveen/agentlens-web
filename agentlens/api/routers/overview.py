@@ -8,6 +8,7 @@ from agentlens.api.schemas import OverviewOut, StatusSummaryOut
 from agentlens.dashboard.data import (
     cluster_cards,
     cost_totals,
+    failure_trend,
     last_job_run,
     quality_panel,
     severity_counts,
@@ -43,5 +44,6 @@ def get_overview(session: Session = Depends(get_db)) -> OverviewOut:  # noqa: B0
             "top_clusters": top,
             "total_eval_cents": costs.total_eval_cents,
             "avg_per_call_cents": costs.avg_per_call_cents,
+            "failure_trend": failure_trend(session),
         }
     )

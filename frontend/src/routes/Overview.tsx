@@ -5,6 +5,7 @@ import { Card } from "../components/Card";
 import { Skeleton } from "../components/Skeleton";
 import { StatTile } from "../components/StatTile";
 import { SeverityDot } from "../components/SeverityDot";
+import { FailureTrendChart } from "../components/FailureTrendChart";
 import { severityRank } from "../severity";
 
 export function Overview() {
@@ -88,6 +89,11 @@ export function Overview() {
           ))}
         </Card>
       </div>
+
+      <Card>
+        <h3 style={{ textAlign: "center" }}>Failure Rate by Date</h3>
+        <FailureTrendChart points={data.failure_trend} />
+      </Card>
 
       <Card>
         <p className="text-dense">

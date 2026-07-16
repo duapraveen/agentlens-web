@@ -1,5 +1,6 @@
 """Tests for the dashboard query layer (no Streamlit involved)."""
 
+from datetime import UTC, datetime
 from pathlib import Path
 
 from sqlalchemy.orm import Session
@@ -9,6 +10,7 @@ from agentlens.dashboard.data import (
     cluster_cards,
     conversation_rows,
     cost_totals,
+    failure_trend,
     last_job_run,
     n_calls_for_scope,
     quality_panel,
@@ -193,6 +195,71 @@ def test_quality_severity_and_cost_rollups(db_session: Session) -> None:
     costs = cost_totals(db_session)
     assert costs.total_eval_cents == 1.2  # judge purpose only
     assert costs.avg_per_call_cents == 1.2 / 3  # three evaluated calls
+
+
+def test_failure_trend_groups_by_date_and_divides_by_all_dimension_records(
+    db_session: Session,
+) -> None:
+    db_session.add(Call(id="call_a", scenario="s", transcript=[], batch_id="b1"))
+    db_session.add(Call(id="call_b", scenario="s", transcript=[], batch_id="b1"))
+    db_session.commit()
+
+    day1 = datetime(2026, 7, 14, 10, 0, tzinfo=UTC)
+    day2 = datetime(2026, 7, 15, 9, 0, tzinfo=UTC)
+
+    def _record(
+        call_id: str, dimension: str, severity: str, passed: bool, created_at: datetime
+    ) -> EvalRecord:
+        return EvalRecord(
+            call_id=call_id,
+            dimension=dimension,
+            score=10 if not passed else 90,
+            severity=severity,
+            passed=passed,
+            judge_reasoning="r",
+            judge_model="claude-haiku-4-5",
+            prompt_version="1.0",
+            rubric_version="1.0",
+            input_hash="h",
+            created_at=created_at,
+        )
+
+    # day1: call_a evaluated on all 4 dimensions -> 1 P0, 1 P1, 2 pass
+    db_session.add_all(
+        [
+            _record("call_a", "task_completion", "P0", False, day1),
+            _record("call_a", "factual_accuracy", "P1", False, day1),
+            _record("call_a", "safety_compliance", "none", True, day1),
+            _record("call_a", "communication_quality", "none", True, day1),
+        ]
+    )
+    # day2: call_b evaluated on all 4 dimensions -> all pass
+    db_session.add_all(
+        [
+            _record("call_b", "task_completion", "none", True, day2),
+            _record("call_b", "factual_accuracy", "none", True, day2),
+            _record("call_b", "safety_compliance", "none", True, day2),
+            _record("call_b", "communication_quality", "none", True, day2),
+        ]
+    )
+    db_session.commit()
+
+    trend = failure_trend(db_session)
+    assert [p.date for p in trend] == ["2026-07-14", "2026-07-15"]
+
+    day1_point = trend[0]
+    assert day1_point.total_records == 4
+    assert day1_point.overall_rate == 0.5  # 2 of 4 records failed
+    assert day1_point.p0_rate == 0.25  # 1 of 4, not 1 of 1 call
+    assert day1_point.p1_rate == 0.25
+    assert day1_point.p2_rate == 0.0
+
+    day2_point = trend[1]
+    assert day2_point.total_records == 4
+    assert day2_point.overall_rate == 0.0
+    assert day2_point.p0_rate == 0.0
+    assert day2_point.p1_rate == 0.0
+    assert day2_point.p2_rate == 0.0
 
 
 def test_cluster_cards_filters_and_p0_first(db_session: Session) -> None:

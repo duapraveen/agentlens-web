@@ -66,6 +66,16 @@ class DimensionQualityOut(BaseModel):
     delta: float | None
 
 
+class FailureTrendPointOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    date: str
+    overall_rate: float
+    p0_rate: float
+    p1_rate: float
+    p2_rate: float
+    total_records: int
+
+
 class OverviewOut(BaseModel):
     quality: dict[str, DimensionQualityOut]
     severities: dict[str, int]
@@ -76,6 +86,7 @@ class OverviewOut(BaseModel):
     top_clusters: list[ClusterCardOut]
     total_eval_cents: float
     avg_per_call_cents: float
+    failure_trend: list[FailureTrendPointOut]
 
 
 class EvalRecordOut(BaseModel):

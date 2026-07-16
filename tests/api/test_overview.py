@@ -46,6 +46,8 @@ def test_overview_shape_on_empty_db(client: TestClient) -> None:
         "top_clusters",
         "total_eval_cents",
         "avg_per_call_cents",
+        "failure_trend",
     }
     assert body["n_reviews"] == 0
     assert body["top_clusters"] == []
+    assert body["failure_trend"] == []

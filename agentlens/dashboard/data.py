@@ -270,6 +270,49 @@ def severity_counts(session: Session) -> dict[str, int]:
 
 
 @dataclass(frozen=True)
+class FailureTrendPoint:
+    """One day's failure rate, overall and per severity (fractions 0-1).
+
+    The denominator is every EvalRecord created that day, not the call
+    count: one call produces up to 4 dimension-level records (one per
+    rubric dimension), so a call with several failing dimensions must not
+    inflate the rate past 100%.
+    """
+
+    date: str
+    overall_rate: float
+    p0_rate: float
+    p1_rate: float
+    p2_rate: float
+    total_records: int
+
+
+def failure_trend(session: Session) -> list[FailureTrendPoint]:
+    """Daily failure rate by severity, grouped by eval-run date (record created_at)."""
+    records = session.query(EvalRecord).order_by(EvalRecord.created_at).all()
+    by_date: dict[str, list[EvalRecord]] = {}
+    for record in records:
+        day = _as_utc(record.created_at).date().isoformat()
+        by_date.setdefault(day, []).append(record)
+
+    points = []
+    for day in sorted(by_date):
+        rows = by_date[day]
+        total = len(rows)
+        points.append(
+            FailureTrendPoint(
+                date=day,
+                overall_rate=sum(not r.passed for r in rows) / total,
+                p0_rate=sum(r.severity == "P0" for r in rows) / total,
+                p1_rate=sum(r.severity == "P1" for r in rows) / total,
+                p2_rate=sum(r.severity == "P2" for r in rows) / total,
+                total_records=total,
+            )
+        )
+    return points
+
+
+@dataclass(frozen=True)
 class CostTotals:
     """Cumulative judge cost and average per evaluated call (USD cents)."""
 
