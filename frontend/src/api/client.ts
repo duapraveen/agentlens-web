@@ -26,6 +26,7 @@ export interface ConversationRow {
   avg_score: number;
   est_cost_cents: number;
   created_at: string;
+  is_golden: boolean;
 }
 
 export interface ClusterLabel {
@@ -68,6 +69,7 @@ export interface CallDetail {
   checks: CheckResult[];
   cluster: { id: number; label: string } | null;
   ground_truth: { failure_mode: string; pipeline_stage: string; severity: string } | null;
+  is_golden: boolean;
 }
 
 export interface ClusterCard {

@@ -30,7 +30,8 @@ export function CallDetail() {
     );
   }
 
-  const origin = params.get("from") === "review-queue" ? "/review-queue" : "/conversations";
+  const from = params.get("from");
+  const origin = from === "review-queue" ? "/review-queue" : from && from.startsWith("/") ? from : "/conversations";
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -46,7 +47,8 @@ export function CallDetail() {
       </div>
 
       <h2>
-        Call {data.call_id} · {data.scenario}
+        Call {data.call_id}
+        {data.is_golden ? " (⭐)" : ""} · {data.scenario}
       </h2>
 
       <Card>

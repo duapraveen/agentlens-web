@@ -30,6 +30,7 @@ class ConversationRowOut(BaseModel):
     avg_score: float
     est_cost_cents: float
     created_at: datetime
+    is_golden: bool
 
 
 class ClusterLabelOut(BaseModel):
@@ -133,6 +134,7 @@ class CallDetailOut(BaseModel):
     checks: list[CheckResultOut]
     cluster: ClusterRefOut | None
     ground_truth: GroundTruthOut | None
+    is_golden: bool
 
 
 class AgreementStatsOut(BaseModel):

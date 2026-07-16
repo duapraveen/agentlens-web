@@ -35,6 +35,11 @@ export function Conversations() {
 
   const columns: Column<ConversationRow>[] = [
     { key: "id", header: "ID", render: (r) => r.call_id },
+    {
+      key: "golden",
+      header: "",
+      render: (r) => (r.is_golden ? <span title="Golden dataset">⭐</span> : ""),
+    },
     { key: "scenario", header: "Scenario", render: (r) => r.scenario },
     {
       key: "fails",
@@ -100,7 +105,9 @@ export function Conversations() {
             columns={columns}
             rows={data.rows}
             rowKey={(r) => r.call_id}
-            onRowClick={(r) => navigate(`/calls/${r.call_id}?from=conversations`)}
+            onRowClick={(r) =>
+              navigate(`/calls/${r.call_id}?from=${encodeURIComponent(`/conversations?${params.toString()}`)}`)
+            }
           />
           <Pagination
             page={page}

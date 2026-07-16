@@ -89,6 +89,7 @@ class ConversationRow:
     avg_score: float
     est_cost_cents: float
     created_at: datetime
+    is_golden: bool
 
 
 def _avg_judge_cost_cents(session: Session) -> float:
@@ -144,6 +145,7 @@ def conversation_rows(
                 avg_score=sum(r.score for r in records) / len(records),
                 est_cost_cents=avg_cost,
                 created_at=call.created_at,
+                is_golden=call.is_golden,
             )
         )
     return rows
