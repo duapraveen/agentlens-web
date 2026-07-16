@@ -105,7 +105,9 @@ export function Conversations() {
             columns={columns}
             rows={data.rows}
             rowKey={(r) => r.call_id}
-            onRowClick={(r) => navigate(`/calls/${r.call_id}?from=conversations`)}
+            onRowClick={(r) =>
+              navigate(`/calls/${r.call_id}?from=${encodeURIComponent(`/conversations?${params.toString()}`)}`)
+            }
           />
           <Pagination
             page={page}
