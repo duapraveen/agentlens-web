@@ -38,8 +38,8 @@ h1, h2, h3 {
 
 .btn-secondary {
   background: var(--color-button-tint);
-  color: var(--color-primary-dark);
-  border-color: var(--color-primary);
+  color: var(--color-button-tint-text);
+  border-color: var(--color-button-tint-border);
 }
 
 .btn-secondary:hover {
