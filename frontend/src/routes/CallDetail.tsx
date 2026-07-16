@@ -46,7 +46,8 @@ export function CallDetail() {
       </div>
 
       <h2>
-        Call {data.call_id} · {data.scenario}
+        Call {data.call_id}
+        {data.is_golden ? " (⭐)" : ""} · {data.scenario}
       </h2>
 
       <Card>

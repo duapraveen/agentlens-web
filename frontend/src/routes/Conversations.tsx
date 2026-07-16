@@ -35,6 +35,11 @@ export function Conversations() {
 
   const columns: Column<ConversationRow>[] = [
     { key: "id", header: "ID", render: (r) => r.call_id },
+    {
+      key: "golden",
+      header: "",
+      render: (r) => (r.is_golden ? <span title="Golden dataset">⭐</span> : ""),
+    },
     { key: "scenario", header: "Scenario", render: (r) => r.scenario },
     {
       key: "fails",

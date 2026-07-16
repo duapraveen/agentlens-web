@@ -62,4 +62,5 @@ def get_conversation(call_id: str, session: Session = Depends(get_db)) -> CallDe
         ground_truth=GroundTruthOut.model_validate(detail.ground_truth)
         if detail.ground_truth is not None
         else None,
+        is_golden=detail.call.is_golden,
     )
