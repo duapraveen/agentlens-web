@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_3b611897f8e7",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator. This is Ava, how can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if my podiatrist is covered under my plan. My foot's been killing me."
+      },
+      {
+        "speaker": "patient",
+        "text": "Sorry, the doctor's name is Dr. Renata Cole, over at Willowbrook Foot Clinic."
+      },
+      {
+        "speaker": "agent",
+        "text": "No problem. Can I get your name and date of birth to pull up your plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Tom Baird, born March 3rd, 1979."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Tom. I see you're on the Horizon Silver PPO plan through Cascade Health. One moment while I check Dr. Cole's network status."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, take your time."
+      },
+      {
+        "speaker": "agent",
+        "text": "Good news \u2014 Dr. Renata Cole at Willowbrook Foot Clinic is in-network under your plan. Your copay for a specialist visit would be thirty-five dollars."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh perfect, that's a relief. Do I need a referral or anything first?"
+      },
+      {
+        "speaker": "agent",
+        "text": "No referral needed for this plan, just call and schedule directly. Anything else I can help with?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks so much, Ava."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Tom. Take care of that foot, and have a great day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

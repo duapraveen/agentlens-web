@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_53ee2abe0baa",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I want to know if physical therapy is covered under my plan. It's the Bright Path Silver plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check that for you. Yes, physical therapy is covered under Bright Path Silver, typically with a twenty dollar copay per visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Is there a specific clinic near me that's in-network?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Absolutely, Riverside Physical Therapy on Elm Street is in-network, and I can get you in with Dr. Hannah Cole this Thursday at 2 PM."
+      },
+      {
+        "speaker": "patient",
+        "text": "Really? That was fast. Is she taking new patients right now?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, she has that Thursday slot open specifically for new patient evaluations."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, great, let's book that then."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'll note your interest, but I'd recommend calling Riverside directly at 555-0148 to confirm and finalize since their scheduling system updates separately from ours."
+      },
+      {
+        "speaker": "patient",
+        "text": "Wait, so it's not actually booked?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Not yet, I just wanted to give you the best available option, so please call them to lock in that Thursday time."
+      },
+      {
+        "speaker": "patient",
+        "text": "Alright, I'll call them. Thanks, I guess."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "hallucinated_availability",
+    "pipeline_stage": "reasoning",
+    "severity": "P1"
+  }
+}

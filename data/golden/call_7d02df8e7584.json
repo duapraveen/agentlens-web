@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_7d02df8e7584",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Health Navigator, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if a physical therapist near me is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can check that. Can I get your name and plan ID number?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Marcus Toll, plan ID is BX-48291."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. And do you have the name of the provider or clinic you're asking about?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, it's Cedar Grove Physical Therapy on Elm Street."
+      },
+      {
+        "speaker": "agent",
+        "text": "Give me just a moment to look that up... Okay, Cedar Grove Physical Therapy is in-network with your Silverline PPO plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good, that's a relief. Is there a copay I should expect?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, your plan shows a thirty dollar copay per visit for physical therapy services."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, that's exactly what I needed to know."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, glad I could help. Is there anything else you need today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Thank you so much."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

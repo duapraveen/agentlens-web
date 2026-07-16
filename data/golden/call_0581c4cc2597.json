@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_0581c4cc2597",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, my doctor said she'd send a referral to a dermatologist, but I haven't heard anything and it's been two weeks."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry for the wait. Can I get your name and date of birth to pull up your record?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Linda Torres, born April 3rd, 1980."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Linda. I see a referral from Dr. Patel to Westfield Dermatology submitted on the 5th, but it looks like it's still pending authorization."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh no, is there something wrong with it?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Not wrong, just stuck in the queue. I can escalate it now so it's approved today, and I'll also give you the clinic's direct line so you can schedule once it clears."
+      },
+      {
+        "speaker": "patient",
+        "text": "That would be great, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "I've submitted the escalation. Westfield Dermatology's number is 555-284-6190. You should be able to call them by tomorrow morning."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, I really appreciate it."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Linda. Is there anything else I can help with?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks so much."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

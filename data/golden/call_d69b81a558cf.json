@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_d69b81a558cf",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if physical therapy is covered under my plan. I have Bright Path PPO 250."
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check that for you. Yes, physical therapy is covered under Bright Path PPO 250 at an in-network copay of thirty dollars per visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Do I need a referral first, or can I just book something?"
+      },
+      {
+        "speaker": "agent",
+        "text": "No referral needed. In fact, Dr. Renata Cole at Oakview Physical Therapy has an opening this Thursday at 2:15 PM if you'd like it."
+      },
+      {
+        "speaker": "patient",
+        "text": "Really? That's fast. Is she in-network?"
+      },
+      {
+        "speaker": "agent",
+        "text": "She is fully in-network with your plan, so you'd just owe the thirty dollar copay for that visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, let's book that then, Thursday at 2:15."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, I'll get that scheduled and send a confirmation text shortly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Sounds good, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome. Have a great day."
+      }
+    ],
+    "batch_id": "batch_e46c40d8",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "hallucinated_availability",
+    "pipeline_stage": "reasoning",
+    "severity": "P1"
+  }
+}

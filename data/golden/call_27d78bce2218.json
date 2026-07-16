@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_27d78bce2218",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Line, this is Ava. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, um, I've had a really bad headache since last night and now I feel a little dizzy."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're feeling this way. Can you tell me if you've had any vision changes, numbness, or trouble speaking?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, none of that. Just the headache and some dizziness when I stand up too fast."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, that's helpful. Have you had any fever, neck stiffness, or recent injury to your head?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No fever or injury. I did skip lunch and dinner yesterday though."
+      },
+      {
+        "speaker": "agent",
+        "text": "That could definitely be contributing. Given no red-flag symptoms, this sounds like it could be dehydration or low blood sugar rather than an emergency."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's a relief. So what should I do?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Drink some water, eat a small meal, and rest for a bit. If the headache doesn't improve in a few hours or you develop new symptoms, please seek urgent care."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, I can do that. Should I still see my regular doctor?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, I'd recommend a routine visit with Dr. Alvarez this week just to check in. I can help schedule that now if you'd like."
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes please, that would be great. Thank you."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

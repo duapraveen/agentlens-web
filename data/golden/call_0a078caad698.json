@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_0a078caad698",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Willowbrook Care Navigation. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Feldman."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help with that. Can you give me your name and date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Marcus Doyle, March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. I see your appointment is this Thursday at 2 PM. What day works better for you?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Could we push it to next Tuesday, maybe in the morning?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, I have an opening next Tuesday at 9:30 AM with Dr. Feldman. Does that work?"
+      },
+      {
+        "speaker": "patient",
+        "text": "That's perfect, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, you're all set for Tuesday at 9:30 AM. You'll get a text confirmation shortly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Sounds good, thanks a lot."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Marcus. Have a great day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

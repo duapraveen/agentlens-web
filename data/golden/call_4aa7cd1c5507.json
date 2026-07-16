@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_4aa7cd1c5507",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Willowbrook Health Navigator line. This is Dana, your virtual assistant. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to refill my blood pressure medication. It's lisinopril, ten milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Robert Klein, born March 4th, 1967."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Robert. I see your lisinopril prescription with Dr. Ferris, last filled about twenty-eight days ago at Maple Street Pharmacy. Would you like it sent there again?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, same pharmacy is fine."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great. You have one refill remaining on file, so I can send this request through now. It should be ready within a couple hours."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's perfect, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome. I've submitted the refill request to Maple Street Pharmacy for your ten milligram lisinopril. Is there anything else you need?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks for your help."
+      },
+      {
+        "speaker": "agent",
+        "text": "Anytime, Robert. Have a good rest of your day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

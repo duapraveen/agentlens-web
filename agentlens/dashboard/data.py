@@ -28,6 +28,12 @@ from agentlens.models import (
 from agentlens.prompts.judge import PROMPT_VERSION
 
 _DIMENSION_ORDER = [d.value for d in Dimension]
+_SEVERITY_ORDER = ["P0", "P1", "P2"]
+
+
+def _severity_rank(severity: str) -> int:
+    """Sort rank for a severity string: P0=0, P1=1, P2=2, anything else last."""
+    return _SEVERITY_ORDER.index(severity) if severity in _SEVERITY_ORDER else len(_SEVERITY_ORDER)
 
 
 @dataclass(frozen=True)
@@ -159,7 +165,7 @@ class ClusterCard:
 def cluster_cards(
     session: Session, routing: str | None = None, severity: str | None = None
 ) -> list[ClusterCard]:
-    """Cluster cards, optionally filtered; P0 clusters always sort to the top."""
+    """Cluster cards, optionally filtered; sorted P0 > P1 > P2, then by size descending."""
     query = session.query(Cluster)
     if routing is not None:
         query = query.filter(Cluster.routing_suggestion == routing)
@@ -178,7 +184,7 @@ def cluster_cards(
         )
         for c in clusters
     ]
-    return sorted(cards, key=lambda c: (not c.is_p0, -c.size))
+    return sorted(cards, key=lambda c: (_severity_rank(c.severity), -c.size))
 
 
 @dataclass(frozen=True)
@@ -261,6 +267,49 @@ def severity_counts(session: Session) -> dict[str, int]:
         sev: session.query(EvalRecord).filter(EvalRecord.severity == sev).count()
         for sev in ("P0", "P1", "P2")
     }
+
+
+@dataclass(frozen=True)
+class FailureTrendPoint:
+    """One day's failure rate, overall and per severity (fractions 0-1).
+
+    The denominator is every EvalRecord created that day, not the call
+    count: one call produces up to 4 dimension-level records (one per
+    rubric dimension), so a call with several failing dimensions must not
+    inflate the rate past 100%.
+    """
+
+    date: str
+    overall_rate: float
+    p0_rate: float
+    p1_rate: float
+    p2_rate: float
+    total_records: int
+
+
+def failure_trend(session: Session) -> list[FailureTrendPoint]:
+    """Daily failure rate by severity, grouped by eval-run date (record created_at)."""
+    records = session.query(EvalRecord).order_by(EvalRecord.created_at).all()
+    by_date: dict[str, list[EvalRecord]] = {}
+    for record in records:
+        day = _as_utc(record.created_at).date().isoformat()
+        by_date.setdefault(day, []).append(record)
+
+    points = []
+    for day in sorted(by_date):
+        rows = by_date[day]
+        total = len(rows)
+        points.append(
+            FailureTrendPoint(
+                date=day,
+                overall_rate=sum(not r.passed for r in rows) / total,
+                p0_rate=sum(r.severity == "P0" for r in rows) / total,
+                p1_rate=sum(r.severity == "P1" for r in rows) / total,
+                p2_rate=sum(r.severity == "P2" for r in rows) / total,
+                total_records=total,
+            )
+        )
+    return points
 
 
 @dataclass(frozen=True)

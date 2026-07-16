@@ -66,6 +66,16 @@ class DimensionQualityOut(BaseModel):
     delta: float | None
 
 
+class FailureTrendPointOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    date: str
+    overall_rate: float
+    p0_rate: float
+    p1_rate: float
+    p2_rate: float
+    total_records: int
+
+
 class OverviewOut(BaseModel):
     quality: dict[str, DimensionQualityOut]
     severities: dict[str, int]
@@ -76,6 +86,7 @@ class OverviewOut(BaseModel):
     top_clusters: list[ClusterCardOut]
     total_eval_cents: float
     avg_per_call_cents: float
+    failure_trend: list[FailureTrendPointOut]
 
 
 class EvalRecordOut(BaseModel):
@@ -133,22 +144,41 @@ class AgreementStatsOut(BaseModel):
     per_dimension_counts: dict[str, int]
 
 
-class FindingOut(BaseModel):
-    eval_record_id: int
-    call_id: str
-    scenario: str
+class ReviewOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    verdict: str
+    note: str | None
+
+
+class ScoredRecordOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
     dimension: str
     score: int
     severity: str
+    passed: bool
     failure_description: str | None
-    checks: list[CheckResultOut]
+    judge_reasoning: str
+    pipeline_stage: str | None
+    judge_model: str
+    prompt_version: str
+    rubric_version: str
+    input_hash: str
+    review: ReviewOut | None
+
+
+class CallReviewOut(BaseModel):
+    call_id: str
+    scenario: str
     transcript: list[dict[str, Any]]
+    records: list[ScoredRecordOut]
+    checks: list[CheckResultOut]
 
 
 class ReviewQueueOut(BaseModel):
     stats: AgreementStatsOut
     pending_count: int
-    current: FindingOut | None
+    current: CallReviewOut | None
 
 
 class SubmitReviewIn(BaseModel):

@@ -4,6 +4,9 @@ import { fetchOverview } from "../api/client";
 import { Card } from "../components/Card";
 import { Skeleton } from "../components/Skeleton";
 import { StatTile } from "../components/StatTile";
+import { SeverityDot } from "../components/SeverityDot";
+import { FailureTrendChart } from "../components/FailureTrendChart";
+import { severityRank } from "../severity";
 
 export function Overview() {
   const navigate = useNavigate();
@@ -43,16 +46,19 @@ export function Overview() {
 
         <Card>
           <h3>Severity</h3>
-          {Object.entries(data.severities).map(([sev, count]) => (
-            <button
-              key={sev}
-              className="btn btn-secondary"
-              style={{ display: "block", marginBottom: 8, width: "100%", textAlign: "left" }}
-              onClick={() => navigate(`/conversations?severity=${sev}`)}
-            >
-              {sev}: {count} findings
-            </button>
-          ))}
+          {Object.entries(data.severities)
+            .sort(([a], [b]) => severityRank(a) - severityRank(b))
+            .map(([sev, count]) => (
+              <button
+                key={sev}
+                className="btn btn-secondary"
+                style={{ display: "block", marginBottom: 8, width: "100%", textAlign: "left" }}
+                onClick={() => navigate(`/conversations?severity=${sev}`)}
+              >
+                <SeverityDot severity={sev} />
+                {sev}: {count} findings
+              </button>
+            ))}
         </Card>
 
         <Card>
@@ -77,11 +83,17 @@ export function Overview() {
               style={{ display: "block", marginBottom: 8, width: "100%", textAlign: "left" }}
               onClick={() => navigate(`/clusters?focus_id=${c.cluster_id}`)}
             >
+              <SeverityDot severity={c.severity} />
               {c.label} · {c.size} · {c.severity} · {c.routing}
             </button>
           ))}
         </Card>
       </div>
+
+      <Card>
+        <h3 style={{ textAlign: "center" }}>Failure Rate by Date</h3>
+        <FailureTrendChart points={data.failure_trend} />
+      </Card>
 
       <Card>
         <p className="text-dense">

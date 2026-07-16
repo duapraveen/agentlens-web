@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { fetchClusters } from "../api/client";
 import { Card } from "../components/Card";
 import { SeverityBadge } from "../components/SeverityBadge";
+import { SeverityDot } from "../components/SeverityDot";
 import { Skeleton } from "../components/Skeleton";
 
 export function Clusters() {
@@ -66,8 +67,9 @@ export function Clusters() {
             {data.last_clustered_at ? new Date(data.last_clustered_at).toLocaleTimeString() : "never"}
           </p>
           {data.cards.map((card) => (
-            <Card key={card.cluster_id}>
+            <Card key={card.cluster_id} tint="strong" severity={card.severity}>
               <h3>
+                <SeverityDot severity={card.severity} />
                 <SeverityBadge severity={card.severity} /> {card.label} · {card.size} calls
               </h3>
               <p className="text-dense" style={{ color: "var(--color-text-secondary)" }}>

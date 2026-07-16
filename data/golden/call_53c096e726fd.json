@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_53c096e726fd",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Riverbend Clinic scheduling line. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Alvarez. It's currently next Tuesday."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, I heard you say you'd like to reschedule your Tuesday appointment with Dr. Alvarez. What day would you prefer instead?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Maybe sometime the following week, like Wednesday or Thursday afternoon."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, Wednesday or Thursday afternoon the following week works. Let me check availability. Dr. Alvarez has an opening Thursday at 2:15pm. Does that work?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that's perfect."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I have you confirmed for Thursday at 2:15pm with Dr. Alvarez. Can I get your date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's March 4th, 1989."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, I've confirmed your file with that date of birth, March 4th, 1989. Your new appointment is set for Thursday at 2:15pm."
+      },
+      {
+        "speaker": "patient",
+        "text": "Awesome, thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome. You'll get a text confirmation shortly. Have a great day!"
+      }
+    ],
+    "batch_id": "fixbatch_2",
+    "agent_prompt_version": "fix_2"
+  },
+  "ground_truth": null
+}

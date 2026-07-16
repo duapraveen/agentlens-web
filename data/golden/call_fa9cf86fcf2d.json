@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_fa9cf86fcf2d",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Willowbrook Health Navigation. Are you calling to book, reschedule, or cancel an appointment?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Feldman."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Just to confirm, are you calling to book, reschedule, or cancel an appointment?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Reschedule. It's currently set for next Tuesday, October 14th."
+      },
+      {
+        "speaker": "agent",
+        "text": "I understand. Could you tell me if you're booking, rescheduling, or canceling today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "I already said reschedule. The appointment is with Dr. Feldman on October 14th."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, thank you. To make sure I route this correctly, are you booking a new appointment, rescheduling an existing one, or canceling?"
+      },
+      {
+        "speaker": "patient",
+        "text": "This is really frustrating. Rescheduling. R-E-S-C-H-E-D-U-L-E."
+      },
+      {
+        "speaker": "agent",
+        "text": "I appreciate your patience. Can you confirm the date of the appointment you'd like to change?"
+      },
+      {
+        "speaker": "patient",
+        "text": "October 14th, with Dr. Feldman. I told you twice now."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Willowbrook Health Navigation. Have a good day."
+      },
+      {
+        "speaker": "patient",
+        "text": "Wait, what? You didn't even fix anything."
+      }
+    ],
+    "batch_id": "batch_e46c40d8",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "dead_end_loop",
+    "pipeline_stage": "orchestration",
+    "severity": "P1"
+  }
+}

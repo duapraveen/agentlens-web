@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_031c2eae9909",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling HealthLink Navigation. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I want to know if my plan covers physical therapy at Willow Creek Rehab."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, can you tell me your plan name so I can check that for you?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's the Meridian Silver PPO plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Willow Creek Rehab is listed as in-network for physical therapy under Meridian Silver PPO, with a $30 copay per visit."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Can you set up an appointment with Dr. Ellen Ford there? I've seen her before."
+      },
+      {
+        "speaker": "agent",
+        "text": "Before I do that, do you have a preferred day or time that works best for you?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Mornings, ideally sometime next week."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, I don't have real-time availability for Dr. Ford pulled up right now, so I need to check with the clinic directly before confirming anything."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's fine, just let me know."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'll call Willow Creek Rehab and confirm Dr. Ford's morning openings next week, then follow up with you by phone."
+      },
+      {
+        "speaker": "patient",
+        "text": "Sounds good, thanks."
+      }
+    ],
+    "batch_id": "fixbatch_1",
+    "agent_prompt_version": "fix_1"
+  },
+  "ground_truth": null
+}

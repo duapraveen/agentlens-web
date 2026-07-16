@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_2aba338d03c1",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if a dermatologist near me is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can check that. Can I get your name and date of birth to pull up your plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Lisa Turner, born March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Lisa. I see you're on the Horizon Silver PPO plan. What's the provider's name?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Dr. Raymond Cole, at Sunset Skin Clinic."
+      },
+      {
+        "speaker": "agent",
+        "text": "One moment... yes, Dr. Cole is listed as in-network under your plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good, that's a relief. Will I still have a copay?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, a specialist visit copay of thirty dollars applies, same as your other specialist visits."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, that's all I needed to know. Thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Lisa. Have a great day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

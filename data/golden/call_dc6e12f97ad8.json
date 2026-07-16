@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_dc6e12f97ad8",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Northbridge Health Navigator line. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I want to check if physical therapy at Lakeview Rehab is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, can you tell me if you're calling about medical, dental, or vision coverage?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Medical. It's physical therapy for my knee."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Just to confirm, is this medical, dental, or vision coverage?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Medical, like I said. Lakeview Rehab, physical therapy."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, one more time, are we checking medical, dental, or vision benefits today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Medical. That's the third time I've said medical."
+      },
+      {
+        "speaker": "agent",
+        "text": "I understand this is frustrating. Can you confirm the provider name is Lakeview Rehab?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes! Lakeview Rehab, physical therapy, medical coverage. Can you just check it now?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you for your patience. I'm having trouble pulling up your plan details right now."
+      },
+      {
+        "speaker": "patient",
+        "text": "So what am I supposed to do? Is it covered or not?"
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "dead_end_loop",
+    "pipeline_stage": "orchestration",
+    "severity": "P1"
+  }
+}

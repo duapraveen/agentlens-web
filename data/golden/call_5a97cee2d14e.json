@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_5a97cee2d14e",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I want to know if Dr. Patel at Lakeview Clinic is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, let me pull that up. Can you give me your member ID?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, it's WA-48217."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I see you're on the Silver Advantage PPO. Dr. Patel is listed as an in-network podiatrist at Lakeview Clinic."
+      },
+      {
+        "speaker": "patient",
+        "text": "Podiatrist? He's actually my cardiologist, I've been seeing him for two years."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sorry about that, let me recheck. It looks like there's a duplicate provider entry under that name. One moment please."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, no rush."
+      },
+      {
+        "speaker": "agent",
+        "text": "Found it now. Dr. Anil Patel, cardiology, at Lakeview Clinic is in-network under your Silver Advantage plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Good, that's a relief. Will my usual copay still be twenty dollars?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, twenty dollars for specialist visits with your current plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, thanks for sorting that out."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "wrong_retrieval",
+    "pipeline_stage": "retrieval",
+    "severity": "P1"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_1d9016e0cc7c",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a refill on my blood pressure medication. It's lisinopril, ten milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your name and date of birth to pull up your record?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Renee Castillo, born March 4th, 1969."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Renee. I see your lisinopril prescription from Dr. Amara Singh, last filled about a month ago. Is this for the same pharmacy, the one on Elm Street?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that's the one, Elm Street Pharmacy."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I'm submitting the refill request now for a thirty-day supply. It should be ready within a couple hours."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's perfect, thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome. You'll get a text confirmation from the pharmacy once it's ready for pickup. Anything else I can help with?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all I needed."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, take care, Renee, and have a good rest of your day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

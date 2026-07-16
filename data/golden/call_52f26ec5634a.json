@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_52f26ec5634a",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Bridgeview Care Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a refill on my blood pressure medicine. It's lisinopril, ten milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Mark Delaney, born March 4th, 1968."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Mark. I see your lisinopril prescription from Dr. Whitfield, last filled about three weeks ago. Which pharmacy would you like it sent to?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Same one as always, the Riverside Pharmacy on Elm Street."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. I'm sending the refill request to Riverside Pharmacy now for thirty tablets, ten milligrams."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, how long till it's ready?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Usually within a couple hours, but I'd suggest calling ahead before you drive over."
+      },
+      {
+        "speaker": "patient",
+        "text": "Will do. Thanks so much for the help."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Mark. Anything else I can do for you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Have a good day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

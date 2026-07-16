@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_12f7b00526e3",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Bridgeway Health Navigation, this is Adele. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, my doctor said she'd send a referral to a dermatologist, but I never heard anything back. It's been two weeks."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry for the delay. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Marcus Feld, born March 3rd, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. I see the referral from Dr. Ainsley to Dr. Priya Ranjan at Cedarbrook Dermatology, submitted on the 2nd. It's still showing as pending authorization."
+      },
+      {
+        "speaker": "patient",
+        "text": "So what do I do now? I have a rash that's not going away."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can escalate this for expedited review since it's a symptomatic case. I'll flag it urgent right now."
+      },
+      {
+        "speaker": "patient",
+        "text": "That would be great, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "Done. You should get authorization confirmation within 24 to 48 hours, and Cedarbrook will call to schedule. I'll also text you their direct line in case you want to call sooner."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, that helps a lot."
+      },
+      {
+        "speaker": "agent",
+        "text": "Anything else I can help with today, Marcus?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks for sorting this out."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

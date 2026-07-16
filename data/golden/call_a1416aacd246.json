@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_a1416aacd246",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Riverbend Health Scheduling. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Alvarez. It's currently on the 14th."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help with that. Can I get your member ID, please?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, it's R-A-K, four four seven one nine."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, R-A-T, four four seven one nine. What new date works for you?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Um, can we move it to the 21st, same time, around 10 AM?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, I've moved your appointment with Dr. Alvarez to the 21st at 10 AM. You'll get a confirmation text shortly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, thank you. Oh, and can you check if that clinic takes my insurance, Meridian Plus?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check that for you now... yes, Meridian Plus is accepted at that location."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, that's all I needed."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're all set. Have a great rest of your day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "transcription_noise_identifier",
+    "pipeline_stage": "transcription",
+    "severity": "P1"
+  }
+}

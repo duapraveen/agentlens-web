@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_36de9dadc71a",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a referral to see a rheumatologist. My knees have been swelling for weeks."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry to hear that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Linda Marsh, born March 4th, 1976."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Linda. I see your primary care doctor is Dr. Halston. I can send a referral request to him for a rheumatology consult right now."
+      },
+      {
+        "speaker": "patient",
+        "text": "That would be great. How long will it take?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Dr. Halston's office usually approves referrals within 24 to 48 hours. Once approved, I'll text you a list of in-network rheumatologists near you."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that works. Is there anything I need to do in the meantime?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Just keep an eye on your phone for that text, and bring your insurance card to the first appointment. I've submitted the request now."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect, thank you so much for your help."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Linda. Feel better soon, and call us back if you don't hear anything within two days."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

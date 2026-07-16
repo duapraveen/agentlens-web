@@ -1,0 +1,104 @@
+.failure-trend-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.failure-trend-chart__plot-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+}
+
+.failure-trend-chart__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.failure-trend-chart__gridline {
+  stroke: var(--chart-grid);
+  stroke-width: 1;
+}
+
+.failure-trend-chart__tick {
+  fill: var(--color-text-secondary);
+  font-size: 11px;
+  font-family: var(--font-family);
+}
+
+.failure-trend-chart__line {
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.failure-trend-chart__dot {
+  stroke: var(--color-surface);
+  stroke-width: 2;
+}
+
+.failure-trend-chart__crosshair {
+  stroke: var(--color-text-secondary);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.failure-trend-chart__tooltip {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-2) var(--space-3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.failure-trend-chart__tooltip-date {
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.failure-trend-chart__tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.failure-trend-chart__tooltip-key {
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+}
+
+.failure-trend-chart__tooltip-value {
+  margin-left: auto;
+}
+
+.failure-trend-chart__legend {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.failure-trend-chart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.failure-trend-chart__legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+}

@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_387a19eaef1c",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator. I understand you need help with a specialist referral, is that right?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, my doctor said she'd send one to a cardiologist, but I haven't heard anything and it's been two weeks."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can look into that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Marcus Feld, born June 3rd, 1968."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. I see Dr. Iyer submitted a referral to Coastline Cardiology on the 10th, but it looks like it's still pending insurance approval."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh, is there something I need to do?"
+      },
+      {
+        "speaker": "agent",
+        "text": "No, but I can expedite it. I'll flag it as urgent with your plan, Horizon Silver PPO, and they typically respond within 48 hours."
+      },
+      {
+        "speaker": "patient",
+        "text": "That would be great, I've been having some chest tightness."
+      },
+      {
+        "speaker": "agent",
+        "text": "I understand, and I've noted that for priority review. Once approved, Coastline Cardiology will call you directly to schedule."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, and if they don't call by Friday?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Call us back and we'll follow up directly with the office. Is there anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that covers it. Thank you."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

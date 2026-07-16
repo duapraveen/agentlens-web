@@ -26,6 +26,14 @@ def review_queue(session: Session) -> list[EvalRecord]:
     )
 
 
+def next_call_id_for_review(session: Session) -> str | None:
+    """Call id of the next call with an unreviewed failed finding, by queue order."""
+    for record in review_queue(session):
+        if record.review is None:
+            return record.call_id
+    return None
+
+
 def submit_review(
     session: Session,
     eval_record_id: int,

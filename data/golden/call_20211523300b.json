@@ -1,0 +1,71 @@
+{
+  "call": {
+    "id": "call_20211523300b",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling HealthLink Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a referral to see a rheumatologist. My knee's been swelling for weeks."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your name and date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Marcus Feldt, born June 4th, 1979."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, Marcus. I see Dr. Elena Rusk, rheumatologist, has an opening this Thursday at 2:15 PM at Brightpath Clinic. Would you like me to book that?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh wow, that fast? Yeah, let's do it."
+      },
+      {
+        "speaker": "agent",
+        "text": "Actually, let me double check that slot before confirming - one moment."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, take your time."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry, Dr. Rusk doesn't actually have any openings this week. I misspoke earlier. Let me find you a real appointment."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh. That's disappointing, but okay."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can get your referral submitted today, and their scheduling team will call you within two business days with an actual open slot."
+      },
+      {
+        "speaker": "patient",
+        "text": "Alright, that works. Thanks for catching that."
+      },
+      {
+        "speaker": "agent",
+        "text": "Of course, and I apologize for the confusion. Is there anything else I can help with?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Thanks."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "hallucinated_availability",
+    "pipeline_stage": "reasoning",
+    "severity": "P1"
+  }
+}
