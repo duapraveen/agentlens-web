@@ -44,10 +44,20 @@ function ScoreFoldout({
         {!record.passed && <SeverityDot severity={record.severity} />}
         {record.dimension} · {record.score} · <SeverityBadge severity={record.severity} /> ·{" "}
         {record.passed ? "pass" : "FAIL"} · stage: {record.pipeline_stage ?? "—"}
-        {record.review && (
+        {record.review ? (
           <span className="text-dense" style={{ marginLeft: 8, color: "var(--color-text-secondary)" }}>
             (reviewed: {record.review.verdict})
+            <span style={{ marginLeft: 4, color: "var(--color-primary)", fontWeight: 700 }}>✓</span>
           </span>
+        ) : (
+          !record.passed && (
+            <span
+              className="text-dense"
+              style={{ marginLeft: 8, color: "var(--severity-p0)", fontWeight: 700 }}
+            >
+              Pending Review
+            </span>
+          )
         )}
       </summary>
       <div className="text-dense" style={{ padding: 12 }}>
