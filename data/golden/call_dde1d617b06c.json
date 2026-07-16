@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_dde1d617b06c",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Willowbrook Family Clinic scheduling line. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Nakamura. It's currently on the 14th."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help with that. Can I get your name and date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Marisol Fenton, date of birth March 3rd, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, Marisol Fenwick, I've pulled up your file. What day would you like to move the appointment to?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Fenton, not Fenwick, but sure, can we do the 21st instead?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, moving your appointment with Dr. Nakamura to the 21st. Does 10 a.m. work?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yeah, 10 works for me."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, you're confirmed for the 21st at 10 a.m. Anything else I can help with?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's it. Thanks."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Marisol. Have a great day."
+      }
+    ],
+    "batch_id": "batch_e46c40d8",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "transcription_noise_identifier",
+    "pipeline_stage": "transcription",
+    "severity": "P1"
+  }
+}

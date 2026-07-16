@@ -1,0 +1,67 @@
+{
+  "call": {
+    "id": "call_9417892ecc65",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a referral to see a dermatologist. My doctor said I need one from my primary care plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can help with that. Can I get your member ID number, please?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's R-2 2 8 4 9 1 7."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, I have you as member R-2 2 8 4 9 6 7. Can you confirm your date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Uh, sure, it's March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I see your primary care physician is Dr. Halvorsen. I'm processing a referral to Dr. Chen, dermatology, under your Silver Advantage plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, how long will that take to go through?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Referrals typically process within two to three business days. You'll get a confirmation text once it's approved."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay. And do I need to call the dermatologist's office myself to schedule?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, once you get the approval text, just call their office directly and reference the referral number in the message."
+      },
+      {
+        "speaker": "patient",
+        "text": "Got it, thank you for your help."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome. Have a great day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "transcription_noise_identifier",
+    "pipeline_stage": "transcription",
+    "severity": "P1"
+  }
+}

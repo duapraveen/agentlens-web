@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_349dbf9ee068",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Nolan. Something came up on Thursday."
+      },
+      {
+        "speaker": "agent",
+        "text": "No problem. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Marcus Webb, born March 9th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. I see your appointment Thursday at 2 PM with Dr. Nolan for a follow-up. What day works better for you?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Could we do the following Monday, maybe in the morning?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me check. I have Monday the 14th at 9:30 AM or 11 AM open with Dr. Nolan."
+      },
+      {
+        "speaker": "patient",
+        "text": "9:30 works great."
+      },
+      {
+        "speaker": "agent",
+        "text": "Perfect, I've moved your appointment to Monday the 14th at 9:30 AM. You'll get a confirmation text shortly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Awesome, thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Marcus. Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Have a good one."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

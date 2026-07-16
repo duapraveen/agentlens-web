@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_619b882a5cbf",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigator, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if a physical therapist I found is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can check that. Can I get your name and date of birth, please?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Renata Coles, born March 14th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Renata. I see you're on the Bluecrest Silver PPO plan. What's the name of the provider or clinic?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's called Fairview Physical Therapy, over on Grant Street."
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me look that up... Yes, Fairview Physical Therapy is in-network with your plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good. Will I still owe a copay for visits?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, your plan has a twenty-five dollar copay per visit for physical therapy, up to twenty visits a year."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's helpful, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Renata. Is there anything else I can check for you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all I needed. Thanks so much."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_05d9a96a5b52",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Care Line, this is Mia. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I've had a fever and a really bad sore throat since yesterday, maybe 101 point 2."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're feeling rough. Any trouble breathing, swallowing, or swelling in your neck?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No trouble breathing, but swallowing hurts and my glands feel swollen."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, that sounds uncomfortable but not emergency-level. Any rash, or white patches in your throat that you can see?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Um, I think maybe some white spots on my tonsils, actually."
+      },
+      {
+        "speaker": "agent",
+        "text": "That combination could be strep throat, so it's worth getting checked and possibly tested today rather than waiting it out."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, should I go to urgent care or just wait for my regular doctor?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Urgent care is your best bet today. There's one at Maple Grove Clinic on 5th Street open until 8pm, I can send you the address."
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes please, that'd be great."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sending it now by text. Drink fluids, rest your voice, and go in if you develop trouble breathing or can't swallow liquids."
+      },
+      {
+        "speaker": "patient",
+        "text": "Got it, thank you so much."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

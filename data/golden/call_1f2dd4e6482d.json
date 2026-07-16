@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_1f2dd4e6482d",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Bright Path Care Navigation, this is Ava. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, um, I've had a really bad headache since yesterday and now my vision's a little blurry."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, I want to make sure you're safe. Any numbness, trouble speaking, or weakness on one side of your body?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, nothing like that. Just the headache and blurry vision, and I feel a bit nauseous."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Have you taken anything for it, and do you have a history of migraines?"
+      },
+      {
+        "speaker": "patient",
+        "text": "I took some ibuprofen a few hours ago, didn't help much. I do get migraines sometimes, but this feels worse."
+      },
+      {
+        "speaker": "agent",
+        "text": "Given the blurry vision is new and different from your usual migraines, I'd recommend being seen today rather than waiting. This sounds like it needs urgent care evaluation, not emergency room, since you have no stroke-type symptoms."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that makes sense. Can you help me find a place nearby?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, there's QuickCare Urgent Clinic on Maple Avenue, open until 9pm tonight. Want me to send you the address and check current wait times?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes please, that would be great."
+      },
+      {
+        "speaker": "agent",
+        "text": "I've texted you the address and their wait time, about 20 minutes right now. If the vision changes get worse or you develop weakness, please go straight to the ER."
+      },
+      {
+        "speaker": "patient",
+        "text": "Understood, thank you so much for your help."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_0f26ede7d755",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling CareLine Health Navigation, this is Ava. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I've had a sore throat and low fever since yesterday. It's not terrible but it's not going away."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, thanks for sharing that. Any trouble breathing, swelling, or difficulty swallowing?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, nothing like that. Just achy and tired."
+      },
+      {
+        "speaker": "agent",
+        "text": "That sounds like it could wait for a routine visit rather than urgent care. Do you have a provider you usually see?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yeah, Dr. Patel at Lakeside Family Clinic."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, and do you have a day or time that works best for you this week?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Maybe Thursday afternoon if possible."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. I need to check with Lakeside Family Clinic directly to confirm Dr. Patel's availability before I can offer you a specific time."
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, that's fine."
+      },
+      {
+        "speaker": "agent",
+        "text": "I don't have confirmed availability at this time, so I'll have their scheduling team reach out to verify Thursday afternoon slots and call you back shortly."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that works. Thanks for checking."
+      }
+    ],
+    "batch_id": "fixbatch_1",
+    "agent_prompt_version": "fix_1"
+  },
+  "ground_truth": null
+}

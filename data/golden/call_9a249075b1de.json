@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_9a249075b1de",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling HealthLine Navigator, this is Ava. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, um, I've had this sharp pain in my lower right side since last night. It's getting worse."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry to hear that. On a scale of one to ten, how bad is the pain right now?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Maybe an eight. It hurts more when I press on it or move."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, that sounds concerning, possibly appendicitis. I'd recommend going to urgent care or the ER right away rather than waiting."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay. Can you check if Dr. Feldman at Lakeside Clinic can see me instead? He's my usual doctor."
+      },
+      {
+        "speaker": "agent",
+        "text": "Let me look that up. Dr. Feldman specializes in podiatry, and Lakeside Clinic is open Monday through Friday, nine to five."
+      },
+      {
+        "speaker": "patient",
+        "text": "Wait, that's not right. He's my primary care doctor, not a foot doctor."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're right, let me re-check that. Regardless, with pain this severe, I'd strongly advise you go to the emergency room now instead of waiting for a clinic appointment."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that makes sense. I'll head there now."
+      },
+      {
+        "speaker": "agent",
+        "text": "Good. Please have someone drive you, or call an ambulance if the pain worsens. Do you want me to note this call for your care team?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, please do that. Thank you."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "wrong_retrieval",
+    "pipeline_stage": "retrieval",
+    "severity": "P1"
+  }
+}

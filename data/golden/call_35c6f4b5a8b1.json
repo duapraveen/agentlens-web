@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_35c6f4b5a8b1",
+    "scenario": "insurance_eligibility",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling CareLine Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to know if a physical therapist I found is covered under my plan."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, can I get your name and date of birth to pull up your plan?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Renata Solis, born March 4th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Renata. I see you're on the Bright Horizon Silver PPO plan. What's the provider's name or clinic?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Lakeview Physical Therapy on Grant Street."
+      },
+      {
+        "speaker": "agent",
+        "text": "One moment... yes, Lakeview Physical Therapy is in-network with your plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh good, that's a relief. Will I still have a copay?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, your plan shows a thirty dollar copay per visit for outpatient therapy."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that works for me. Thanks for checking."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Renata. Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Thank you!"
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

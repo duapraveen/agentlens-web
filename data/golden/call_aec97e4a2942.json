@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_aec97e4a2942",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Family Clinic scheduling line. Are you looking to book, reschedule, or cancel an appointment?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Elman."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Just to confirm, would you like to book, reschedule, or cancel an appointment?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Reschedule. The one on the 14th, with Dr. Elman."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, I heard cancel. Let me clarify \u2014 are you booking, rescheduling, or canceling today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, reschedule, not cancel. I want a different day than the 14th."
+      },
+      {
+        "speaker": "agent",
+        "text": "Understood. Can you tell me if this is for booking, rescheduling, or canceling an appointment?"
+      },
+      {
+        "speaker": "patient",
+        "text": "I've said reschedule three times now. Is this actually working?"
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry for the trouble. To move forward, are you booking, rescheduling, or canceling an appointment today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Forget it, I'll just call the front desk directly."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Family Clinic. Have a great day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "dead_end_loop",
+    "pipeline_stage": "orchestration",
+    "severity": "P1"
+  }
+}

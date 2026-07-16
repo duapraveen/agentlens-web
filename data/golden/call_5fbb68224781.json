@@ -1,0 +1,55 @@
+{
+  "call": {
+    "id": "call_5fbb68224781",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Brightpath Health Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a refill on my blood pressure medication. It's lisinopril."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help with that. Can I get your full name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Marcus Delaney, born March 4th, 1972."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. I see your lisinopril 10 milligrams, last filled at Cedar Grove Pharmacy about three weeks ago. Is that the correct pharmacy?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that's the right one."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great. I'll send the refill request to Dr. Owens for approval and forward it to Cedar Grove once confirmed. It should be ready within a couple hours."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's perfect, thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome. Is there anything else I can help you with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all I needed."
+      },
+      {
+        "speaker": "agent",
+        "text": "Take care, Marcus, and have a great rest of your day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

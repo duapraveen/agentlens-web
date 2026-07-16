@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_2cf37eedecda",
+    "scenario": "referral_navigation",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Navigation. This is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, my doctor said she'd send a referral to a cardiologist, but I haven't heard anything yet."
+      },
+      {
+        "speaker": "agent",
+        "text": "I can check that for you. Can I get your name and date of birth?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Daniel Hoffman, born March 4th, 1972."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Daniel. I see a referral from Dr. Reyes to Dr. Okafor at Lakeside Cardiology, submitted three days ago. It's currently pending approval from your plan."
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh, okay. Is there anything I need to do to speed it up?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Not right now, but I can flag it as urgent since you mentioned chest discomfort in your notes. That usually cuts approval time to one business day."
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, please do that. I'd really appreciate it."
+      },
+      {
+        "speaker": "agent",
+        "text": "Done. I've marked it urgent and you'll get a text once it's approved, with instructions to call Lakeside Cardiology directly to book."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, thank you so much."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Daniel. Is there anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thanks again."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

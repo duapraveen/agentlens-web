@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_139c576b8d39",
+    "scenario": "prescription_refill",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Riverbend Care Navigation, this is Ava. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need a refill on my blood pressure medication. It's lisinopril, ten milligrams."
+      },
+      {
+        "speaker": "agent",
+        "text": "Sure, I can help with that. Can I get your name and date of birth to pull up your record?"
+      },
+      {
+        "speaker": "patient",
+        "text": "It's Carla Medina, birthday March 4th, 1975."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Carla. I see your prescription with Dr. Owens, last filled about a month ago at Sunrise Pharmacy. Is that still the right pharmacy?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that's the one, on Fifth Street."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, I'm sending the refill request to Sunrise Pharmacy now for your ten milligram lisinopril, thirty day supply."
+      },
+      {
+        "speaker": "patient",
+        "text": "Perfect. Do you know how long it usually takes them to fill it?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Typically it's ready within a couple hours, but I'd suggest calling ahead before you drive over."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, I'll do that. Thanks so much for your help."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Carla. Is there anything else I can assist you with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Have a good day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_a459eae959be",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling HarborWell Care Line, this is Ava. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I've had a pounding headache since yesterday and some blurry vision on and off."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry to hear that. Can I get your member ID to pull up your record?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's B as in bravo, 4-4-8-2-1-9."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, pulling up member D-4-4-8-2-1-9 now. Any nausea, weakness on one side, or trouble speaking?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No weakness, but I did throw up once this morning."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay. Have you had headaches like this before, or is this new?"
+      },
+      {
+        "speaker": "patient",
+        "text": "New, and it's way worse than my usual tension headaches."
+      },
+      {
+        "speaker": "agent",
+        "text": "Given the sudden severe headache with vomiting and vision changes, I'd like you to go to urgent care or the ER today rather than wait for a callback."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that's what I was afraid of. Should I mention anything specific?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, tell them about the vision changes and vomiting, and mention your member ID D-4-4-8-2-1-9 so they can check your history."
+      },
+      {
+        "speaker": "patient",
+        "text": "Alright, I'll head there now. Thank you."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "transcription_noise_identifier",
+    "pipeline_stage": "transcription",
+    "severity": "P1"
+  }
+}

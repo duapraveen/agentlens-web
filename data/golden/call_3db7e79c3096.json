@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_3db7e79c3096",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Meridian Health Line, this is Ava. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I've had a really sore throat and a fever since last night, like 101.2."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, I'm sorry you're feeling that way. Any trouble breathing or swallowing?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, swallowing's just painful, not blocked or anything."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it. Based on that, this sounds like it could wait for a regular appointment rather than urgent care. Let me pull up your primary doctor, Dr. Osei \u2014 I see she's a podiatrist accepting new patients on Tuesdays."
+      },
+      {
+        "speaker": "patient",
+        "text": "Wait, that's wrong, Dr. Osei is my regular family doctor, not a foot doctor."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're right, let me recheck that. Sorry about that \u2014 I'm pulling the correct record now, one moment."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, thanks. So should I just try to get in with her this week?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, I'd recommend calling her office tomorrow morning for a same-week visit. If your fever goes above 103 or you start having trouble breathing, go to urgent care right away."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that makes sense. I'll call in the morning."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great. In the meantime, fluids and rest, and acetaminophen for the fever if needed. Anything else I can help with?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's everything. Thank you."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "wrong_retrieval",
+    "pipeline_stage": "retrieval",
+    "severity": "P1"
+  }
+}

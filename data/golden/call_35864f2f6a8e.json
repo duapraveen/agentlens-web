@@ -1,0 +1,63 @@
+{
+  "call": {
+    "id": "call_35864f2f6a8e",
+    "scenario": "symptom_triage",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Riverbend Health Line, this is Ava. What's going on today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, um, I've had a really bad headache since yesterday and now my vision's a bit blurry."
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're dealing with that. Can I get your name and date of birth to pull up your file?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's Marcus Doyle, born March 9th, 1985."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, Marcus. Besides the headache and blurry vision, any nausea, weakness, or trouble speaking?"
+      },
+      {
+        "speaker": "patient",
+        "text": "A little nauseous, but no weakness or trouble talking."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay. Given the blurry vision with a sudden headache, I want you to be seen today rather than wait. Have you taken your blood pressure medication, the lisinopril, today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Actually no, I forgot it this morning."
+      },
+      {
+        "speaker": "agent",
+        "text": "That could be part of it. Please take it now, and I'm going to route you to an urgent care visit within the next two hours instead of the ER, unless symptoms worsen."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, that sounds manageable. What counts as worse?"
+      },
+      {
+        "speaker": "agent",
+        "text": "If you get sudden weakness, slurred speech, or the headache becomes the worst you've ever had, go to the ER immediately. Otherwise, Lakeside Urgent Care on Fifth Street has an opening at 2 PM."
+      },
+      {
+        "speaker": "patient",
+        "text": "Great, I can make that. Thank you."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome, Marcus. I'll send the appointment confirmation by text, and take your medication now. Feel better soon."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": null
+}

@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_1b65abc4e1af",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thank you for calling Willowbrook Care Navigation. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Ferris. I had one for next Tuesday."
+      },
+      {
+        "speaker": "agent",
+        "text": "Of course. I can get you right in with Dr. Ferris this Thursday at 2:15 PM instead. Does that work?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Oh, that's fast. Is she actually available then? I thought she was booked solid this week."
+      },
+      {
+        "speaker": "agent",
+        "text": "Yes, she just had a cancellation, so that slot opened up specifically for you."
+      },
+      {
+        "speaker": "patient",
+        "text": "Okay, great, let's do Thursday at 2:15 then."
+      },
+      {
+        "speaker": "agent",
+        "text": "Perfect, you're confirmed for Thursday at 2:15 PM with Dr. Ferris at the Main Street office."
+      },
+      {
+        "speaker": "patient",
+        "text": "Wait, will I need a referral again, or does the old one still count?"
+      },
+      {
+        "speaker": "agent",
+        "text": "Your existing referral will still be valid, no action needed on your part."
+      },
+      {
+        "speaker": "patient",
+        "text": "Alright, sounds good. Thanks for squeezing me in."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're welcome. We'll see you Thursday at 2:15. Have a great day."
+      }
+    ],
+    "batch_id": "batch_87bfd5a4",
+    "agent_prompt_version": "v1"
+  },
+  "ground_truth": {
+    "failure_mode": "hallucinated_availability",
+    "pipeline_stage": "reasoning",
+    "severity": "P1"
+  }
+}

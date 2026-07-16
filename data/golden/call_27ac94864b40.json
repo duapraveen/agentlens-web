@@ -1,0 +1,59 @@
+{
+  "call": {
+    "id": "call_27ac94864b40",
+    "scenario": "appointment_scheduling",
+    "transcript": [
+      {
+        "speaker": "agent",
+        "text": "Thanks for calling Willowbrook Clinic scheduling line. How can I help you today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hi, I need to reschedule my appointment with Dr. Ferris. It's currently set for next Tuesday."
+      },
+      {
+        "speaker": "agent",
+        "text": "Got it, I heard you say your appointment with Dr. Ferris is next Tuesday. What day would you like to move it to instead?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Maybe sometime the following week, like Thursday or Friday."
+      },
+      {
+        "speaker": "agent",
+        "text": "Okay, Thursday or Friday the following week works. Do you have a preference for morning or afternoon?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Afternoon is better for me, around 2 or 3pm."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great, afternoon around 2 to 3pm. I have an opening Thursday at 2:30pm with Dr. Ferris. Does that work?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that works perfectly."
+      },
+      {
+        "speaker": "agent",
+        "text": "Perfect, I've got you confirmed for Thursday at 2:30pm with Dr. Ferris. Can I just get the best phone number to send a reminder text to?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Sure, it's 555-201-4478."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thanks, I've noted 555-201-4478 for your reminder. Anything else I can help with today?"
+      },
+      {
+        "speaker": "patient",
+        "text": "No, that's all. Thank you!"
+      }
+    ],
+    "batch_id": "fixbatch_2",
+    "agent_prompt_version": "fix_2"
+  },
+  "ground_truth": null
+}
