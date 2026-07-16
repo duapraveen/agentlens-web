@@ -28,7 +28,7 @@ export function AppShell() {
             <NavLink
               key={title}
               to={NAV_ROUTES[title]}
-              end={NAV_ROUTES[title] === "/"}
+              end
               className={({ isActive }) => `nav-link${isActive ? " nav-link--active" : ""}`}
             >
               {title}
