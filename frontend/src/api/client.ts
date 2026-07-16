@@ -111,22 +111,27 @@ export interface AgreementStats {
   per_dimension_counts: Record<string, number>;
 }
 
-export interface Finding {
-  eval_record_id: number;
+export interface ReviewVerdict {
+  verdict: string;
+  note: string | null;
+}
+
+export interface ScoredRecord extends EvalRecordDetail {
+  review: ReviewVerdict | null;
+}
+
+export interface CallReview {
   call_id: string;
   scenario: string;
-  dimension: string;
-  score: number;
-  severity: string;
-  failure_description: string | null;
-  checks: CheckResult[];
   transcript: { speaker?: string; text?: string }[];
+  records: ScoredRecord[];
+  checks: CheckResult[];
 }
 
 export interface ReviewQueueState {
   stats: AgreementStats;
   pending_count: number;
-  current: Finding | null;
+  current: CallReview | null;
 }
 
 export interface FixProposal {

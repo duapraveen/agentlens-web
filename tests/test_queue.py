@@ -2,7 +2,7 @@
 
 from sqlalchemy.orm import Session
 
-from agentlens.feedback.queue import review_queue, submit_review
+from agentlens.feedback.queue import next_call_id_for_review, review_queue, submit_review
 from agentlens.models import Call, EvalRecord, Review
 
 
@@ -44,6 +44,26 @@ def test_queue_orders_unreviewed_first_then_severity(db_session: Session) -> Non
 
     queue = review_queue(db_session)
     assert [r.id for r in queue] == [p0.id, p1.id, p2.id, p0_reviewed.id]
+
+
+def test_next_call_id_for_review_follows_queue_order(db_session: Session) -> None:
+    p1 = _finding(db_session, "call_p1", "P1")
+    p0_reviewed = _finding(db_session, "call_p0r", "P0")
+    _finding(db_session, "call_p0", "P0")
+    db_session.add(Review(eval_record_id=p0_reviewed.id, verdict="agree"))
+    db_session.commit()
+
+    assert next_call_id_for_review(db_session) == "call_p0"
+
+    # once call_p0's finding is reviewed, the next unreviewed call is call_p1
+    p0 = db_session.query(EvalRecord).filter_by(call_id="call_p0").one()
+    submit_review(db_session, p0.id, "agree")
+    db_session.commit()
+    assert next_call_id_for_review(db_session) == p1.call_id
+
+
+def test_next_call_id_for_review_none_when_queue_empty(db_session: Session) -> None:
+    assert next_call_id_for_review(db_session) is None
 
 
 def test_submit_review_creates_then_updates(db_session: Session) -> None:

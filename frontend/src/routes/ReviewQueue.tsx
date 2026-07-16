@@ -1,32 +1,107 @@
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { fetchReviewQueue, submitReview } from "../api/client";
+import type { ScoredRecord } from "../api/client";
 import { Card } from "../components/Card";
 import { StatTile } from "../components/StatTile";
 import { Skeleton } from "../components/Skeleton";
 import { SeverityDot } from "../components/SeverityDot";
+import { SeverityBadge } from "../components/SeverityBadge";
+import { severityColorVar, severityRank } from "../severity";
 
-export function ReviewQueue() {
-  const queryClient = useQueryClient();
-  const [verdict, setVerdict] = useState<"agree" | "disagree" | null>(null);
-  const [note, setNote] = useState("");
-  const [showTranscript, setShowTranscript] = useState(false);
+function ScoreFoldout({
+  record,
+  onSubmitted,
+}: {
+  record: ScoredRecord;
+  onSubmitted: (result: unknown) => void;
+}) {
+  const [verdict, setVerdict] = useState<"agree" | "disagree" | null>(
+    (record.review?.verdict as "agree" | "disagree" | undefined) ?? null
+  );
+  const [note, setNote] = useState(record.review?.note ?? "");
   const [error, setError] = useState<string | null>(null);
 
-  const { data, isLoading } = useQuery({ queryKey: ["review-queue"], queryFn: fetchReviewQueue });
-
   const mutation = useMutation({
-    mutationFn: (vars: { id: number; verdict: "agree" | "disagree"; note?: string }) =>
-      submitReview(vars.id, vars.verdict, vars.note),
+    mutationFn: (vars: { verdict: "agree" | "disagree"; note?: string }) =>
+      submitReview(record.id, vars.verdict, vars.note),
     onSuccess: (result) => {
       setError(null);
-      queryClient.setQueryData(["review-queue"], result);
-      setVerdict(null);
-      setNote("");
-      setShowTranscript(false);
+      onSubmitted(result);
     },
     onError: (e: Error) => setError(e.message),
   });
+
+  return (
+    <details
+      style={{
+        marginBottom: 8,
+        borderLeft: `4px solid ${record.passed ? "transparent" : severityColorVar(record.severity)}`,
+        paddingLeft: 8,
+      }}
+    >
+      <summary>
+        {!record.passed && <SeverityDot severity={record.severity} />}
+        {record.dimension} · {record.score} · <SeverityBadge severity={record.severity} /> ·{" "}
+        {record.passed ? "pass" : "FAIL"} · stage: {record.pipeline_stage ?? "—"}
+        {record.review && (
+          <span className="text-dense" style={{ marginLeft: 8, color: "var(--color-text-secondary)" }}>
+            (reviewed: {record.review.verdict})
+          </span>
+        )}
+      </summary>
+      <div className="text-dense" style={{ padding: 12 }}>
+        <p>{record.judge_reasoning}</p>
+        {record.failure_description && (
+          <p>
+            <strong>Finding:</strong> {record.failure_description}
+          </p>
+        )}
+        <p style={{ color: "var(--color-text-secondary)" }}>
+          Prompt v{record.prompt_version} · Model: {record.judge_model} · Rubric v{record.rubric_version} ·
+          Input hash: {record.input_hash}
+        </p>
+
+        <div style={{ display: "flex", gap: 8, marginTop: 8, marginBottom: 8 }}>
+          <button
+            className={verdict === "agree" ? "btn btn-primary" : "btn btn-secondary"}
+            onClick={() => setVerdict("agree")}
+          >
+            ✓ Agree
+          </button>
+          <button
+            className={verdict === "disagree" ? "btn btn-primary" : "btn btn-secondary"}
+            onClick={() => setVerdict("disagree")}
+          >
+            ✗ Disagree
+          </button>
+        </div>
+        <textarea
+          className="text-dense"
+          placeholder="Note (why is the reasoning/evidence flawed?)"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          style={{ width: "100%", minHeight: 50 }}
+        />
+        <button
+          className="btn btn-primary"
+          disabled={verdict === null || mutation.isPending}
+          onClick={() => verdict && mutation.mutate({ verdict, note: note || undefined })}
+          style={{ marginTop: 8 }}
+        >
+          {record.review ? "Update Review" : "Submit Review"}
+        </button>
+        {error && <p style={{ color: "var(--severity-p0)" }}>{error}</p>}
+      </div>
+    </details>
+  );
+}
+
+export function ReviewQueue() {
+  const queryClient = useQueryClient();
+  const [showTranscript, setShowTranscript] = useState(false);
+
+  const { data, isLoading } = useQuery({ queryKey: ["review-queue"], queryFn: fetchReviewQueue });
 
   if (isLoading || !data) {
     return (
@@ -63,15 +138,10 @@ export function ReviewQueue() {
         </Card>
       ) : (
         <>
-          <Card tint="strong" severity={current.severity}>
+          <Card>
             <h3>
               {current.call_id} · {current.scenario}
             </h3>
-            <p>
-              <SeverityDot severity={current.severity} />
-              <strong>{current.dimension}</strong> · score {current.score} · {current.severity}
-            </p>
-            <p className="text-dense">{current.failure_description ?? "(no description)"}</p>
             <p className="text-dense">
               {current.checks.length
                 ? current.checks
@@ -94,38 +164,16 @@ export function ReviewQueue() {
             )}
           </Card>
 
-          <Card>
-            <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
-              <button
-                className={verdict === "agree" ? "btn btn-primary" : "btn btn-secondary"}
-                onClick={() => setVerdict("agree")}
-              >
-                ✓ Agree
-              </button>
-              <button
-                className={verdict === "disagree" ? "btn btn-primary" : "btn btn-secondary"}
-                onClick={() => setVerdict("disagree")}
-              >
-                ✗ Disagree
-              </button>
-            </div>
-            <textarea
-              className="text-dense"
-              placeholder="Note (optional)"
-              value={note}
-              onChange={(e) => setNote(e.target.value)}
-              style={{ width: "100%", minHeight: 60 }}
-            />
-            <button
-              className="btn btn-primary"
-              disabled={verdict === null || mutation.isPending}
-              onClick={() => verdict && mutation.mutate({ id: current.eval_record_id, verdict, note: note || undefined })}
-              style={{ marginTop: 8 }}
-            >
-              Submit & Next
-            </button>
-            {error && <p style={{ color: "var(--severity-p0)" }}>{error}</p>}
-          </Card>
+          <h3>Scores</h3>
+          {[...current.records]
+            .sort((a, b) => severityRank(a.severity) - severityRank(b.severity))
+            .map((record) => (
+              <ScoreFoldout
+                key={record.id}
+                record={record}
+                onSubmitted={(result) => queryClient.setQueryData(["review-queue"], result)}
+              />
+            ))}
         </>
       )}
     </div>
