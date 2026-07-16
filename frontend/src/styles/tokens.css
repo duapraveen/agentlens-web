@@ -6,6 +6,8 @@
   --color-panel-tint-strong: #d7f0e1;
   --color-button-tint: #bfe6cc;
   --color-button-tint-hover: #a9dcba;
+  --color-button-tint-text: var(--color-primary-dark);
+  --color-button-tint-border: var(--color-primary);
   --color-surface: #ffffff;
   --color-border: #e4e4e0;
   --color-text: #1a1d1b;
@@ -51,6 +53,12 @@
     --color-panel-tint-strong: #1b2a22;
     --color-button-tint: #234a37;
     --color-button-tint-hover: #2c5a43;
+    /* On dark surfaces, brand text/border accents must lighten independently
+       of --color-primary-dark (which stays a hover-darken shade for
+       btn-primary) — reusing it here gave 1.3:1 contrast against the tint
+       background. #8fe3c0 clears WCAG AA (4.5:1) against both tint states. */
+    --color-button-tint-text: #8fe3c0;
+    --color-button-tint-border: #8fe3c0;
     --color-border: #2c302e;
     --color-text: #f2f4f3;
     --color-text-secondary: #a1a7a4;
